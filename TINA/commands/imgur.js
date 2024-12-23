@@ -1,32 +1,40 @@
-module.exports.config = {
-  name: "imgur",
-  version: "1.0.0",
-  hasPermssion: 0,
-  credits: "NAZRUL",// cmd convert to MR.NAZRUL **//
-  description: "Create Image&video link",
-  commandCategory: "Image",
-  cooldowns: 1,
-  dependencies: {
-    "request":"",
-    "fs-extra":"",
-    "axios":""
+const axios = require("axios");
+class Imgur {
+  constructor() {
+    this.clientId = "fc9369e9aea767c", this.client = axios.create({
+      baseURL: "https://api.imgur.com/3/",
+      headers: {
+        Authorization: `Client-ID ${this.clientId}`
+      }
+    })
   }
-};
-
-
-module.exports.run = async ({ api, event, args }) => {
-    const axios = global.nodemodule['axios'];
-  const apis = await axios.get('https://raw.githubusercontent.com/MR-NAYAN-404/NAYAN-BOT/main/api.json')
-  const n = apis.data.api
-    const linkanh = event.messageReply.attachments[0].url || args.join(" ");
-    if (!linkanh)
-        return api.sendMessage('[âšœï¸]âžœ Please give feedback or enter the image or vide link', event.threadID, event.messageID);
-    try {
-      var tpk = `",`;
-        const allPromise = (await Promise.all(event.messageReply.attachments.map(item => axios.get(`${n}/imgurv2?link=${encodeURIComponent(item.url)}`)))).map(item => item.data.uploaded.image);
-        return api.sendMessage(`𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝖢𝗋𝖾𝖺𝗍𝖾𝖽 𝖸𝗈𝗎𝗋 𝖨𝗆𝗀𝗎𝗋 𝖴𝗋𝗅 𝖫𝗂𝗇𝗄✨🥀\n\n"` + allPromise.join('"\n"') + tpk, event.threadID, event.messageID);
+  async uploadImage(url) {
+    return (await this.client.post("image", {
+      image: url
+    })).data.data.link
+  }
+}
+class Modules extends Imgur {
+  constructor() {
+    super()
+  }
+  get config() {
+    return {
+      name: "imgur",
+      description: "Upload image to imgur",
+      version: "1.0.0",
+      credits: "nazrul",
+      cooldown: 5,
+      usage: "imgur <url>",
+      commandCategory: "Công cụ",
+      hasPermssion: 0
     }
-    catch (e) {
-        return api.sendMessage('[âšœï¸]âžœ An error occurred while executing the command', event.threadID, event.messageID);
-    }
-}; 
+  }
+  run = async ({ api, event }) => {
+    var array = [];
+    if ("message_reply" != event.type || event.messageReply.attachments.length < 0) return api.sendMessage(" Please reply to the photo or video", event.threadID, event.messageID);
+    for (let { url } of event.messageReply.attachments) await this.uploadImage(url).then((res => array.push(res))).catch((err => console.log(err)));
+    return api.sendMessage(`${array.join("\n")}`, event.threadID, event.messageID)
+  }
+}
+module.exports = new Modules;
