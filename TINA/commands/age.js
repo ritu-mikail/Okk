@@ -24,14 +24,14 @@ module.exports.run = async function ({ event, args, api }) {
     return fse.createReadStream(dest);
 };
   var input = args[0];
-  if (!input) return api.sendMessage(`[ðŸŒº]âžœ Please enter the correct format >age [date of birth]`,event.threadID,event.messageID);
+  if (!input) return api.sendMessage(`[Please enter the correct format >age [date of birth]`,event.threadID,event.messageID);
   var cc = input.split("/");
   var ngay1 = parseInt(cc[0]);
   if (!ngay1 || isNaN(ngay1) || ngay1 > 31 || ngay1 < 1) return api.sendMessage("[ðŸŒº]âžœInvalid date of birth!",event.threadID,event.messageID);
   var thang1 = parseInt(cc[1]);
   if (!thang1 || isNaN(thang1) || thang1 > 12 || thang1 < 1) return api.sendMessage("[ðŸŒº]âžœ Invalid month of birth!",event.threadID,event.messageID);
   var nam1 = parseInt(cc[2]);
-  if (!nam1) return api.sendMessage("[ðŸŒº]âžœ Invalid year of birth!",event.threadID,event.messageID);
+  if (!nam1) return api.sendMessage("[Invalid year of birth!",event.threadID,event.messageID);
   const moment = require("moment-timezone");
   var hientai = moment.tz("Asia/Dhaka").format("DD/MM/YYYY HH:mm:ss");
   var concac = `${hientai}`;
