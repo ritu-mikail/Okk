@@ -1,43 +1,28 @@
-const axios = require('axios');
-const fs = require('fs-extra');
-const path = require('path');
-
 module.exports.config = {
-    name: "dalle",
-    hasPermssion: 0,
-    version: "1.0.0",
-    credits: "nazrul",
-    description: "Image Generator",
-    usePrefix: false,
-    commandCategory: "AI",
-    usages: "[prompt]",
-    cooldowns: 5,
+  name: "dalle",
+  version: "1.0.",
+  hasPermssion: 2,
+  credits: "nazrul",
+  description: "generate image from polination",
+  usePrefix: false,
+  commandCategory: "image",
+  usages: "query",
+  cooldowns: 2,
 };
 
-module.exports.run = async function ({ api, event, args }) {
-    const { messageID, threadID } = event;
-
-    if (!args[0]) {
-        return api.sendMessage("Please provide a prompt.\n\nExample: dalle a beautiful sunset over the mountains", threadID, messageID);
-    }
-
-    const prompt = args.join(" ");
-    const url = `https://joshweb.click/dalle?prompt=${encodeURIComponent(prompt)}`;
-const gen = await api.sendMessage("☁️ | Generating the image Please Wait......", event.threadID, event.messageID);
-    try {
-        const response = await axios.get(url, { responseType: 'arraybuffer' });
-        const imageDir = path.join(__dirname, 'cache');
-        const imagePath = path.join(imageDir, `${Date.now()}.png`);
-        await fs.ensureDir(imageDir);
-        await fs.writeFile(imagePath, response.data);
-
-        api.sendMessage({
-            body: `Here is your generated image\nPrompt: ${prompt}`,
-            attachment: fs.createReadStream(imagePath)
-        }, threadID, messageID);
-
-    } catch (error) {
-        console.error(error);
-        api.sendMessage(`${error.message}`, threadID, messageID);
-    }
+module.exports.run = async ({api, event, args }) => {
+const axios = require('axios');
+const fs = require('fs-extra');
+ let { threadID, messageID } = event;
+  let query = args.join(" ");
+  if (!query) return api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐏𝐫𝐨𝐦𝐩𝐭 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐢𝐦𝐚𝐠𝐞....", threadID, messageID);
+  api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐁𝐚𝐛𝐲...😘",event.threadID, event.messageID);
+let path = __dirname + `/cache/poli.png`;
+  const poli = (await axios.get(`https://image.pollinations.ai/prompt/${query}`, {
+    responseType: "arraybuffer",
+  })).data;
+  fs.writeFileSync(path, Buffer.from(poli, "utf-8"));
+  api.sendMessage({
+    body: `𝐈𝐦𝐚𝐠𝐞 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐟𝐮𝐥`,
+    attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID);
 };
