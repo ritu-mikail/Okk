@@ -22,7 +22,7 @@ module.exports.run = async function({ api, event, args, Users }) {
         }
         
         const encodedQuery = encodeURIComponent(query);
-        const apiUrl = `https://jerome-web.onrender.com/service/api/gemini?q=${encodedQuery}`;
+        const apiUrl = `https://jerome-web.onrender.com/service/api/gemini?ask=${encodedQuery}`;
         
         const res = await axios.get(apiUrl);
         
