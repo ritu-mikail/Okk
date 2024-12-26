@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "bb",
+    name: "mm",
     version: "1.0.2",
     hasPermssion: 0,
     credits: "Emon",
@@ -22,7 +22,7 @@ module.exports.run = async function({ api, event, args, Users }) {
         }
         
         const encodedQuery = encodeURIComponent(query);
-        const apiUrl = `https://jerome-web.onrender.com/service/api/gemini?ask=${encodedQuery}`;
+        const apiUrl = `https://geminipro-y1zu.onrender.com/chat-with-gemini/?q=${encodedQuery}`;
         
         const res = await axios.get(apiUrl);
         
