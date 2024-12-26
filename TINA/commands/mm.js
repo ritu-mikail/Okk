@@ -1,11 +1,10 @@
 module.exports.config = {
     name: "mm",
     version: "1.0.2",
-    permission: 0,
-    prefix: 'awto',
+    hasPermssion: 0,
     credits: "Emon",
     description: "ai",
-    category: "botAi",
+    commandCategory: "botAi",
     usages: "bot+bot Help", 
     cooldowns: 5,
 };
