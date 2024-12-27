@@ -184,5 +184,5 @@ mentions: [{ tag: name, id: event.senderID }]
         }, event.messageID,
       )}
 }catch(err){
-    return api.sendMessage(`Error: ${err.message}`, event.threadID, event.messageID);
+    return api.sendMessage(`Error Baby 😞😞😓`, event.threadID, event.messageID);
 }};
