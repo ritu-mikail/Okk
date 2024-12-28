@@ -1,6 +1,6 @@
 /** Don't change credits please real owner fb I'd : https://m.me/MR.AYAN.2X **/
 module.exports.config = {
-  name: "status2",
+  name: "status",
   version: "1.0.0",
   hasPermssi: 0,
   credits: "NAZRUL",
