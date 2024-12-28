@@ -88,7 +88,7 @@ const { correctAnswer, nameUser, author } = handleReply;
           return api.sendMessage(incorrectMsg, event.threadID, event.messageID);
         }
         if (userReply === correctAnswer.toLowerCase()) {
-          api.unsendMessage(handleReply.messageID)
+          api.sendMessage(handleReply.messageID)
           .catch(console.error);
           let rewardCoins = 300;
           let rewardExp = 100;
