@@ -8,14 +8,13 @@ module.exports = {
         name: "fc",
         aliases: ["fc2"],
         version: "1.0",
-        author: "Vex_kshitiz",
+        credits: "nazrul",
         cooldowns: 2,
         usePrefix: true,
-        permission: 0,
-        description: "",
-        longDescription: "fake fb chat",
+        hasPermssion: 0,
+        description: "fake fb chat",
         commandCategory: "fun",
-        guide: "{p} fakechat2 uid | {text} or {p} fakechat @mention | {text} or reply to someone text by fakechat {text} -{theme}"
+        usages: "{p} fakechat2 uid | {text} or {p} fakechat @mention | {text} or reply to someone text by fakechat {text} -{theme}"
     },
 
     run: async function ({ event, message, usersData, api, args }) {
