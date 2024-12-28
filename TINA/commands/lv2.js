@@ -6,7 +6,7 @@
 module.exports.config = {
     name: "lv2",
     version: "2.0.0",
-    hasPermssion: 2,
+    hasPermssion: 0,
     credits: "nazrul",
     description: "",
     commandCategory: "Love",
