@@ -215,5 +215,5 @@ for(let i = 0; i < mainlength; i++) {
   }
   msg += txt+"\n";
 }
-return api.sendMessage(msg+"\nView the message on your browser to see more clearly", event.threadID, event.messageID);
+return api.sendMessage(msg+"", event.threadID, event.messageID);
 }
