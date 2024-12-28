@@ -69,7 +69,7 @@ module.exports = {
     }
   },
 
-  handleReply: async ({ event, api, handleReply, Users }) => {
+  handleReply: async ({ event, api, handleReply, usersData }) => {
 const { correctAnswer, nameUser, author } = handleReply;
     if (event.senderID !== author)
       return api.sendMessage(
@@ -88,12 +88,12 @@ const { correctAnswer, nameUser, author } = handleReply;
           return api.sendMessage(incorrectMsg, event.threadID, event.messageID);
         }
         if (userReply === correctAnswer.toLowerCase()) {
-          api.sendMessage(handleReply.messageID)
+          api.unsendMessage(handleReply.messageID)
           .catch(console.error);
           let rewardCoins = 300;
           let rewardExp = 100;
-          let userData = await Users.get(author);
-          await Users.set(author, {
+          let userData = await usersData.get(author);
+          await usersData.set(author, {
           money: userData.money + rewardCoins,
             exp: userData.exp + rewardExp,
             data: userData.data,
