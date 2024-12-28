@@ -1,7 +1,7 @@
 module.exports.config = {
     name: "github",
     version: "1.0",
-    hasPermission: 2,
+    hasPermssion: 2,
     credits: "nazrul",
     description: "Send Github links",
     usages: "/github",
