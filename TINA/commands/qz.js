@@ -9,7 +9,7 @@ const baseApiUrl = async () => {
 
 module.exports = {
   config: {
-    name: "qz",
+    name: "quiz2",
     version: "1.0",
     credits: "Dipto",
     cooldowns: 0,
@@ -20,7 +20,7 @@ module.exports = {
     usages: "{p}quiz2 \n{pn}quiz2 bn \n{p}quiz2 en",
   },
 
-  run: async function ({ api, event, args }) {
+  run: async function ({ api, event, usersData, args }) {
     const input = args.join('').toLowerCase() || "bn";
     let timeout = 300;
     let category = "bangla";
