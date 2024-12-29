@@ -1,8 +1,8 @@
 module.exports.config = {
-		name: "facebook uset",
+		name: "fbuser",
 		version: "2.0.0",
 		hasPermission: 2,
-	credits: "Marjhun Baylon and Miko Mempin",
+	credits: "islamick chat",
 		description: "Filter Faceboook User",
 		usePrefix: false,
 		commandCategory: "admin tool",
@@ -29,7 +29,7 @@ module.exports.run = async function ({ api, event }) {
 		} else {
 				api.sendMessage(`Filtering group of friends ${filteredUsers.length} 'Facebook users'.`, event.threadID, () => {
 						if (isBotAdmin) {
-								api.sendMessage("Starting filtering...\n\n", event.threadID, async () => {
+								api.sendMessage("Starting Remove...\n\n", event.threadID, async () => {
 										for (const userID of filteredUsers) {
 												try {
 														await new Promise(resolve => setTimeout(resolve, 1000));
@@ -40,9 +40,9 @@ module.exports.run = async function ({ api, event }) {
 												}
 										}
 
-										api.sendMessage(`✅ Successfully filtered ${successCount} people.`, event.threadID, () => {
+										api.sendMessage(`✅ Successfully Remove ${successCount} people.`, event.threadID, () => {
 												if (failCount !== 0) {
-														api.sendMessage(`❌ Failed to filter ${failCount} people.`, event.threadID);
+														api.sendMessage(`❌ Failed to Remove ${failCount} people.`, event.threadID);
 												}
 										});
 								});
