@@ -1,39 +1,47 @@
+const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
+
 module.exports.config = {
   name: "flux2",
-  version: "1.0",
+  version: "1.1.0",
   hasPermssion: 0,
-  credits: "nazrul2",
-  description: "Generate an image from flux API",
-  commandCategory: "image",
-  usages: ".flux <prompt>",
-  cooldowns: 7,
+  credits: "xnil",
+  description: "",
+  commandCategory : "without prefix",
+  usages: "flux prompt",
+  cooldowns: 3
+};
+const getStreamFromURL = async (url) => {
+  const response = await axios.get(url, { responseType: "stream" });
+  return response.data;
 };
 
 module.exports.run = async ({ api, event, args }) => {
-  const axios = require('axios');
-  const fs = require('fs-extra');
-  const { threadID, messageID } = event;
-  const nazrul = args.join(" ");
-  
-  if (!nazrul) return api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐏𝐫𝐨𝐦𝐩𝐭 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐢𝐦𝐚𝐠𝐞....", threadID, messageID);
-  
   try {
-    api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐁𝐚𝐛𝐲...😘", threadID, messageID);
-    const path = __dirname + `/cache/tina.png`;
+    const prompt = args.join(" ");
+    
+    if (!prompt) return api.sendMessage("Please provide a prompt for the image.", event.threadID, event.messageID);
+    const loadingMessage = await api.sendMessage("Wait a moment... 😁", event.threadID, event.messageID);
+    api.setMessageReaction("😘", event.messageID, (err) => {}, true);
+    
+    const { data } = await axios.get(`https://xnilnew404.onrender.com/xnil/flux?prompt=${prompt}`);
 
-    const response = await axios.get(`https://xnilnew404.onrender.com/xnil/fluxpro?prompt=${nazrul}`, { responseType: "arraybuffer" });
-
-    if (!response.data.image) {
-      return api.sendMessage("Error: Image generation failed. Please try again later.", threadID, messageID);
+    if (!data.image) {
+      return api.sendMessage("Error: Image generation failed. Please try again later.", event.threadID, event.messageID);
     }
+    api.setMessageReaction("😇", event.messageID, (err) => {}, true);
 
-    fs.writeFileSync(path, Buffer.from(response.data.image, "utf-8"));
+    await api.unsendMessage(loadingMessage.messageID);
+    
+    const imageStream = await getStreamFromURL(data.image);
+    
     api.sendMessage({
-      body: "𝐈𝐦𝐚𝐠𝐞 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥",
-      attachment: fs.createReadStream(path),
-    }, threadID, () => fs.unlinkSync(path), messageID);
+      body: "Here's your image!",
+      attachment: imageStream,
+    }, event.threadID, event.messageID);
 
-  } catch (error) {
-    api.sendMessage(`Error: ${error.message}`, threadID, messageID);
+  } catch (e) {
+    api.sendMessage("Error: " + e.message, event.threadID, event.messageID);
   }
 };
