@@ -1,50 +1,30 @@
-const axios = require("axios");
-const baseApiUrl = async () => {
-  const base = await axios.get(
-    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
-  );
-  return base.data.api;
-};
-
 module.exports.config = {
   name: "flux",
-  version: "2.0",
-  hasPermission: 2,
-  credits: "Dipto",
-  description: "Generate images with Flux.1 Pro",
-  commandCategory: "𝗜𝗠𝗔𝗚𝗘 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥",
-  usages: "{pn} [prompt] --ratio 1024x1024\n{pn} [prompt]",
-  cooldowns: 15,
+  version: "1.0.",
+  hasPermssion: 0,
+  credits: "nazrul",
+  description: "generate image from flux",
+  commandCategory: "image",
+  usages: ".flux <prompt>",
+  cooldowns: 7,
 };
 
-module.exports.run = async ({ event, args, api }) => {
-  try {
-  const prompt = args.join(" ");
-  /*let prompt2, ratio;
-  if (prompt.includes("--ratio")) {
-    const parts = prompt.split("--ratio");
-    prompt2 = parts[0].trim();
-    ratio = parts[1].trim();
-  } else {
-    prompt2 = prompt;
-    ratio = "1024x1024";
-  }*/
-    const startTime = new Date().getTime();
-    const ok = api.sendMessage('wait baby <😘', event.threadID, event.messageID);
-    api.setMessageReaction("⌛", event.messageID, (err) => {}, true);
-    const apiUrl = `${await baseApiUrl()}/flux11?prompt=${prompt}`;
-
-    api.setMessageReaction("✅", event.messageID, (err) => {}, true);
-     api.unsendMessage(ok.messageID)
-    const attachment = (await axios.get(apiUrl, { responseType: "stream" }).data;
-    const endTime = new Date().getTime();
-    await api.sendMessage({
-          body: `Here's your image\nModel Name: "Flux.1 Pro"\nTime Taken: ${(endTime - startTime) / 1000} second/s`, 
-          attachment
-      }, event.threadID, event.messageID);
-  } catch (e) {
-    console.log(e);
-    api.sendMessage("Error: " + e.message, event.threadID, event.messageID);
-  }
+module.exports.run = async ({api, event, args }) => {
+const axios = require('axios');
+const fs = require('fs-extra');
+ let { threadID, messageID } = event;
+  let nazrul = args.join(" ");
+try {
+  if (!nazrul) return api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐏𝐫𝐨𝐦𝐩𝐭 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐢𝐦𝐚𝐠𝐞....", threadID, messageID);
+  api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐁𝐚𝐛𝐲...😘",event.threadID, event.messageID);
+let path = __dirname + `/cache/tina2.png`;
+  const nazrul2 = (await axios.get(`https://ccprojectapis.ddns.net/api/flux?prompt=${nazrul}`, {
+    responseType: "arraybuffer",
+  })).data;
+  fs.writeFileSync(path, Buffer.from(nazrul2, "utf-8"));
+  api.sendMessage({
+    body: `𝐈𝐦𝐚𝐠𝐞 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐟𝐮𝐥`,
+    attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID);
+}catch(nazrul3) {
+  api.sendMessage(`Error: ${nazrul3.message}`, event.threadID, event.messageID)}
 };
-
