@@ -1,14 +1,11 @@
-const fs = global.nodemodule["fs-extra"];
-const axios = require("axios");
-const path = require("path");
-
 module.exports.config = {
-  name: "goiadmin3",
+  name: "goiadmin4",
     version: "1.0.0",
-    hasPermssion: 0,
-    credits: "nazrul",
+    permission: 0,
+    credits: "nayan",
     description: "mention",
-    commandCategory: "user",
+    prefix: true,
+    category: "user",
     usages: "tag",
     cooldowns: 5,
 };
@@ -17,32 +14,18 @@ module.exports.handleEvent = function({ api, event }) {
     var aid = ["61559715091297"];
     for (const id of aid) {
     if ( Object.keys(event.mentions) == id) {
-      var msg = ["আমার বস চিপায়  বিজি আছে\n যা বলার আমাকে বলো", "মেয়ে পটাতে গেছে😁😁😁", "এমন ভাবে মেনশান না দিয়ে একটা জি এফ দাও🙈🙈", "এত ডাকিস কেন😡😡😡\n আমার বস অনেক বিজি", "বস কই তুমি\nতোমারে এক বলদে খোজ করে 😑😑😁🤣"];
-const nazrul = msg[Math.floor(Math.random() * msg.length)];
-const imgPath = path.resolve(__dirname, `./cache/${senderID}.jpg`);
-      const dpResponse = await axios.get(`https://graph.facebook.com/${senderID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, {
-        responseType: "arraybuffer",
-      });
+      var know = ["আমার বস চিপায়  বিজি আছে\n যা বলার আমাকে বলো", "মেয়ে পটাতে গেছে😁😁😁", "এমন ভাবে মেনশান না দিয়ে একটা জি এফ দাও🙈🙈", "এত ডাকিস কেন😡😡😡\n আমার বস অনেক বিজি", "বস কই তুমি\nতোমারে এক বলদে খোজ করে 😑😑😁🤣"];
+      var know = hi[Math.floor(Math.random() * hi.length)];
 
-      fs.writeFileSync(imgPath, Buffer.from(dpResponse.data));
+var link = [
 
-      const msg = {
-        body:`${nazrul}\n`,
-        attachment: fs.createReadStream(imgPath),
-      };
+"https://i.imgur.com/hgXTRP0.jpeg",
+];
 
-api.sendMessage(msg, threadID, (err) => {
-        if (err) {
-          console.error("Error sending message:", err);
-          return;
-        }
+var callback = () => api.sendMessage({body:`${know}`,attachment: fs.createReadStream(__dirname + "/cache/5.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/5.jpg"));	
 
-        fs.unlinkSync(imgPath);
-      });
-    } catch (error) {
-      console.error("Error fetching or sending profile picture:", error);
-    }
-  }
+return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/5.jpg")).on("close",() => callback());
+
 };
-
-module.exports.run = function({ api, event, client, __GLOBAL }) {};
+module.exports.run = async function({}) {
+                 }
