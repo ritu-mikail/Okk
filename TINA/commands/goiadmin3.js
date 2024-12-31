@@ -1,3 +1,7 @@
+const fs = global.nodemodule["fs-extra"];
+const axios = require("axios");
+const path = require("path");
+
 module.exports.config = {
   name: "goiadmin3",
     version: "1.0.0",
