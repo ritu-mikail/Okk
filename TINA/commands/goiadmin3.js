@@ -8,12 +8,15 @@ module.exports.config = {
     usages: "tag",
     cooldowns: 5,
 };
-module.exports.handleEvent = function({ api, event }) {
-  if (event.senderID !== "61559715091297") {
+module.exports.handleEvent = function({ api, event, args,client,Users,Threads,__GLOBAL,Currencies }) {
+  const axios = global.nodemodule["axios"];
+const request = global.nodemodule["request"];
+const fs = global.nodemodule["fs-extra"];
+if (event.senderID !== "61559715091297") {
     var aid = ["61559715091297"];
     for (const id of aid) {
     if ( Object.keys(event.mentions) == id) {
-      var know = ["আমার বস চিপায়  বিজি আছে\n যা বলার আমাকে বলো", "মেয়ে পটাতে গেছে😁😁😁", "এমন ভাবে মেনশান না দিয়ে একটা জি এফ দাও🙈🙈", "এত ডাকিস কেন😡😡😡\n আমার বস অনেক বিজি", "বস কই তুমি\nতোমারে এক বলদে খোজ করে 😑😑😁🤣"];
+      var hi = ["আমার বস চিপায়  বিজি আছে\n যা বলার আমাকে বলো", "মেয়ে পটাতে গেছে😁😁😁", "এমন ভাবে মেনশান না দিয়ে একটা জি এফ দাও🙈🙈", "এত ডাকিস কেন😡😡😡\n আমার বস অনেক বিজি", "বস কই তুমি\nতোমারে এক বলদে খোজ করে 😑😑😁🤣"];
       var know = hi[Math.floor(Math.random() * hi.length)];
 
 var link = [
@@ -26,9 +29,6 @@ var callback = () => api.sendMessage({body:`${know}`,attachment: fs.createReadSt
 return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/5.jpg")).on("close",() => callback());
 
 };
-module.exports.run = async function({api,event,args,client,Users,Threads,__GLOBAL,Currencies}) {
+module.exports.run = async function({}) {
                  }
 
-const axios = global.nodemodule["axios"];
-const request = global.nodemodule["request"];
-const fs = global.nodemodule["fs-extra"];
