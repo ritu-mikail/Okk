@@ -21,11 +21,24 @@ const imgPath = path.resolve(__dirname, `./cache/${senderID}.jpg`);
       });
 
       fs.writeFileSync(imgPath, Buffer.from(dpResponse.data));
-      return api.sendMessage({body:`${nazrul}\n`,
+
+      const msg = {
+        body:`${nazrul}\n`,
         attachment: fs.createReadStream(imgPath),
-      }, event.threadID, event.messageID);
+      };
+
+api.sendMessage(msg, threadID, (err) => {
+        if (err) {
+          console.error("Error sending message:", err);
+          return;
+        }
+
+        fs.unlinkSync(imgPath);
+      });
+    } catch (error) {
+      console.error("Error fetching or sending profile picture:", error);
     }
-    }}
+  }
 };
-module.exports.run = async function({}) {
-                 }
+
+module.exports.run = function({ api, event, client, __GLOBAL }) {};
