@@ -1,11 +1,10 @@
 module.exports.config = {
   name: "goiadmin4",
     version: "1.0.0",
-    permission: 0,
+    hasPermssion: 0,
     credits: "nayan",
     description: "mention",
-    prefix: true,
-    category: "user",
+    commandCategory: "user",
     usages: "tag",
     cooldowns: 5,
 };
