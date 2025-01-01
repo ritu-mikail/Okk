@@ -1,1 +1,151 @@
-const _0x3d48a0=_0x2008;function _0x1f8d(){const _0x112f26=['PREFIX','fs-extra','WNkBy','𝗦━➢\x20','nodemodule','\x0a𝐎𝐖𝐍𝐄𝐑➢\x20𝐍𝐀','eStream','𝐂𝐫𝐞𝐚𝐭𝐨𝐫\x20━➢','length','\x20｣\x0a𝗧𝗢𝗗𝗬\x20𝗜𝗦','VWYiF','Asia/Dhaka','nazrul','Bot\x20info.','kholz','qtAjz','𝗡𝗡𝗜𝗡𝗚\x0a𝗛𝗢𝗨𝗥','\x20\x20𝗨𝗣𝗧𝗜𝗠𝗘\x20𝗥','tGKRq','createWrit','『D/MM/YYYY','┄•\x0a𝐍𝐀𝐌𝐄➢𝐈𝐬','MhvDo','』\x20【hh:mm:s','DRcsL','PhhjN','══❁🌺❁════┅','lY12B.jpeg','run','𝐥𝐚𝐦𝐢𝐜𝐤\x20𝐂𝐡𝐚','gur.com/Qm','4146512oIqNbi','3639828tGkXHC','random','𝗢𝗕𝗢𝗧\x0a•┄┅══','axios','nYkNh','380053JSQwfj','sendMessag','/cache/jus','createRead','28wqeBqw','request','qxqeJ','config','pipe','•┄┅════❁🌺❁','\x20𝗧𝗜𝗠𝗘\x20➢\x20','𝐭\x0a𝐁𝐎𝐓\x20𝐏𝐑𝐄𝐅','moment-tim','114522aSRHgz','ezone','kBfZr','...','ARLmX','𝐂𝐡𝐚𝐭','1.0.1','threadID','\x0a𝗦𝗘𝗖𝗢𝗡𝗗\x20━➢','════┅┄•\x0a\x20\x20','122355tPuKwe','unlinkSync','\x0a𝗕𝗢𝗧\x20𝗜𝗦\x20𝗥𝗨','wa.jpg','uptime','\x20𝐈𝐬𝐥𝐦𝐚𝐢𝐜𝐤\x20','xizkd','toYZs','exports','cJxtp','close','Stream','https://im','HbYmy','bYQAI','Admin\x20and\x20','PuXyA','300882fEITrs','128210pWmPji','𝐙𝐑𝐔𝐋\x20\x0a⋆✦⎯⎯','\x20\x0a𝗠𝗜𝗡𝗨𝗧𝗘\x20━','670vwMcQC','𝐈𝐗\x20➢\x20｢\x20','format','7HnpcLX','⎯⎯⎯⎯⎯⎯⎯✦⋆\x0a','floor'];_0x1f8d=function(){return _0x112f26;};return _0x1f8d();}function _0x2008(_0x7728c6,_0x345c58){const _0x38f97e=_0x1f8d();return _0x2008=function(_0xd59115,_0x501f14){_0xd59115=_0xd59115-(0xe39+0x1877+-0x25e1*0x1);let _0x3468dc=_0x38f97e[_0xd59115];return _0x3468dc;},_0x2008(_0x7728c6,_0x345c58);}(function(_0xcc097d,_0x4759c3){const _0x3104a0=_0x2008,_0x322f11=_0xcc097d();while(!![]){try{const _0x50611b=parseInt(_0x3104a0(0x11b))/(0x18f8+0x5b3+0x13a*-0x19)+-parseInt(_0x3104a0(0xec))/(0xc42+-0x1627*-0x1+-0x2267)+-parseInt(_0x3104a0(0xd1))/(0x3*-0xa06+0x1e84+-0x3*0x25)*(-parseInt(_0x3104a0(0x11f))/(-0x1b23*-0x1+-0x1*-0x3ec+0xa59*-0x3))+parseInt(_0x3104a0(0xed))/(0x55d+0x19a9*-0x1+0x1451*0x1)+-parseInt(_0x3104a0(0x116))/(-0x15*0x126+-0xb86+0x23aa)+parseInt(_0x3104a0(0xf3))/(-0xecd*0x2+-0x15a1+0x3342)*(-parseInt(_0x3104a0(0x115))/(0x557+-0x1be*-0x11+-0x22ed))+-parseInt(_0x3104a0(0xdb))/(-0xf7a+-0x1217+0x219a)*(-parseInt(_0x3104a0(0xf0))/(-0x15*0xbf+0x4b7*-0x1+0x146c));if(_0x50611b===_0x4759c3)break;else _0x322f11['push'](_0x322f11['shift']());}catch(_0x4671e8){_0x322f11['push'](_0x322f11['shift']());}}}(_0x1f8d,-0xde5*-0xc+-0x1e819*-0x3+-0x6*0x4711),module[_0x3d48a0(0xe3)][_0x3d48a0(0x122)]={'name':_0x3d48a0(0xdf),'version':_0x3d48a0(0xd7),'hasPermssion':0x0,'credits':_0x3d48a0(0x102),'description':_0x3d48a0(0xea)+_0x3d48a0(0x103),'commandCategory':_0x3d48a0(0xd4),'cooldowns':0x1,'dependencies':{'request':'','fs-extra':'','axios':''}},module[_0x3d48a0(0xe3)][_0x3d48a0(0x112)]=async function({api:_0x362ed1,event:_0x2f7164,args:_0x22b11b,client:_0xf7c53e,Users:_0x56fe0c,Threads:_0x57dd35,__GLOBAL:_0x438843,Currencies:_0x84520e}){const _0x54518f=_0x3d48a0,_0x2be8b4={'PhhjN':_0x54518f(0x119),'cJxtp':_0x54518f(0x120),'MhvDo':_0x54518f(0xf7),'VWYiF':function(_0x24ea8d,_0x7c6cf3){return _0x24ea8d/_0x7c6cf3;},'kholz':function(_0x3dd773,_0x374d9d){return _0x3dd773*_0x374d9d;},'qxqeJ':function(_0x159bc4,_0x42f969){return _0x159bc4%_0x42f969;},'WNkBy':function(_0x3e3869,_0x36da20){return _0x3e3869*_0x36da20;},'bYQAI':function(_0x2fe3ef,_0x10070b){return _0x2fe3ef%_0x10070b;},'ARLmX':function(_0x3759ec,_0x4284d8){return _0x3759ec(_0x4284d8);},'HbYmy':_0x54518f(0xd0)+_0x54518f(0xd2),'toYZs':_0x54518f(0x101),'qtAjz':_0x54518f(0x10a)+_0x54518f(0x10d)+'s】','kBfZr':_0x54518f(0xe7)+_0x54518f(0x114)+_0x54518f(0x111),'nYkNh':function(_0x17860b,_0x30b039){return _0x17860b(_0x30b039);},'xizkd':function(_0x4701d9,_0x34d586){return _0x4701d9*_0x34d586;},'DRcsL':function(_0x33e09d,_0x3c2877){return _0x33e09d+_0x3c2877;},'PuXyA':_0x54518f(0x11d)+_0x54518f(0xde),'tGKRq':_0x54518f(0xe5)},_0x5af826=global[_0x54518f(0xfa)][_0x2be8b4[_0x54518f(0x10f)]],_0x493637=global[_0x54518f(0xfa)][_0x2be8b4[_0x54518f(0xe4)]],_0x9a0a9a=global[_0x54518f(0xfa)][_0x2be8b4[_0x54518f(0x10c)]],_0x4a1fb3=process[_0x54518f(0xdf)](),_0x2d3a7c=Math[_0x54518f(0xf5)](_0x2be8b4[_0x54518f(0x100)](_0x4a1fb3,_0x2be8b4[_0x54518f(0x104)](-0x1de3*0x1+0x1*0x1c3a+0x1e5,0x1*-0x187d+-0x1221+-0x5*-0x892))),_0x291878=Math[_0x54518f(0xf5)](_0x2be8b4[_0x54518f(0x100)](_0x2be8b4[_0x54518f(0x121)](_0x4a1fb3,_0x2be8b4[_0x54518f(0xf8)](0x1*-0x1613+0x2*0x113c+-0xc29,0x205e+-0x1038+0x7*-0x246)),-0x8*0x20b+-0x33*-0x9e+-0xee6)),_0x3d4f6a=Math[_0x54518f(0xf5)](_0x2be8b4[_0x54518f(0xe9)](_0x4a1fb3,-0x7*0x37e+-0x1021+0x28cf)),_0x361b1e=_0x2be8b4[_0x54518f(0xd5)](require,_0x2be8b4[_0x54518f(0xe8)]);var _0x1a4300=_0x361b1e['tz'](_0x2be8b4[_0x54518f(0xe2)])[_0x54518f(0xf2)](_0x2be8b4[_0x54518f(0x105)]),_0x168878=[_0x2be8b4[_0x54518f(0xd3)]],_0x1e26ca=()=>_0x362ed1[_0x54518f(0x11c)+'e']({'body':_0x54518f(0x124)+_0x54518f(0xda)+_0x54518f(0x107)+_0x54518f(0x118)+_0x54518f(0x110)+_0x54518f(0x10b)+_0x54518f(0x113)+_0x54518f(0xcf)+_0x54518f(0xf1)+global[_0x54518f(0x122)][_0x54518f(0xf6)]+(_0x54518f(0xff)+_0x54518f(0x125))+_0x1a4300+(_0x54518f(0xdd)+_0x54518f(0x106)+_0x54518f(0xf9))+_0x2d3a7c+(_0x54518f(0xef)+'➢\x20')+_0x291878+(_0x54518f(0xd9)+'\x20')+_0x3d4f6a+(_0x54518f(0xfb)+_0x54518f(0xee)+_0x54518f(0xf4)+_0x54518f(0xfd)+_0x54518f(0xe0)+_0x54518f(0xd6)),'attachment':_0x9a0a9a[_0x54518f(0x11e)+_0x54518f(0xe6)](__dirname+(_0x54518f(0x11d)+_0x54518f(0xde)))},_0x2f7164[_0x54518f(0xd8)],()=>_0x9a0a9a[_0x54518f(0xdc)](__dirname+(_0x54518f(0x11d)+_0x54518f(0xde))));return _0x2be8b4[_0x54518f(0xd5)](_0x493637,_0x2be8b4[_0x54518f(0x11a)](encodeURI,_0x168878[Math[_0x54518f(0xf5)](_0x2be8b4[_0x54518f(0xe1)](Math[_0x54518f(0x117)](),_0x168878[_0x54518f(0xfe)]))]))[_0x54518f(0x123)](_0x9a0a9a[_0x54518f(0x109)+_0x54518f(0xfc)](_0x2be8b4[_0x54518f(0x10e)](__dirname,_0x2be8b4[_0x54518f(0xeb)])))['on'](_0x2be8b4[_0x54518f(0x108)],()=>_0x1e26ca());});
+module.exports.config = {
+  name: "uptime",
+  version: "1.0.0",
+  hasPermssion: 0,
+  credits: "nazrul",
+  hide: true,
+  description: "Random images by api - uptime",
+  commandCategory: "administrators",
+  cooldowns: 2,
+  dependencies: {
+    "pidusage": ""
+  }
+};
+function byte2mb(bytes) {
+  const units = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  let l = 0, n = parseInt(bytes, 10) || 0;
+  while (n >= 1024 && ++l) n = n / 1024;
+  return `${n.toFixed(n < 10 && l > 0 ? 1 : 0)} ${units[l]}`;
+}
+module.exports.run = async ({ api, event, args , Threads}) => {
+  var username = process.env.REPL_OWNER
+  if(username !== undefined) {
+    var urlRepl = `https://${process.env.REPL_SLUG}.${username}.repl.co`
+}
+  var os = require("os");
+  var cpus = os.cpus();
+  var chips;
+  for (var i of cpus) chips = i.model, speed = i.speed;
+  if (cpus == undefined);
+var time = process.uptime(),
+        hours = Math.floor(time / (60 * 60)),
+        minutes = Math.floor((time % (60 * 60)) / 60),
+        seconds = Math.floor(time % 60);
+  var z_1 = (hours < 10) ? '0' + hours : hours;
+    var x_1 = (minutes < 10) ? '0' + minutes : minutes;
+    var y_1 = (seconds < 10) ? '0' + seconds : seconds;
+    const axios = require('axios')
+    const threadSetting = (await Threads.getData(String(event.threadID))).data || 
+    {};
+    const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX 
+    : global.config.PREFIX;
+    const { commands } = global.client;
+  const pidusage = await global.nodemodule["pidusage"](process.pid);
+  const timeStart = Date.now();
+  const fs = require('fs-extra');
+   if (!fs.existsSync(__dirname +
+        `/cache/UTM-Avo.ttf`)) {
+        let getfont = (await axios.get(`https://github.com/quyenkaneki/data/blob/main/UTM-Avo.ttf?raw=true`, { responseType: "arraybuffer" })).data;
+        fs.writeFileSync(__dirname + `/cache/UTM-Avo.ttf`, Buffer.from(getfont, "utf-8"));
+      }
+         if (!fs.existsSync(__dirname +
+      `/cache/phenomicon.ttf`)) {
+      let getfont2 = (await axios.get(`https://github.com/quyenkaneki/data/blob/main/phenomicon.ttf?raw=true`, { responseType: "arraybuffer" })).data;
+      fs.writeFileSync(__dirname + `/cache/phenomicon.ttf`, Buffer.from(getfont2, "utf-8"));
+    };
+  if (!fs.existsSync(__dirname +
+      `/cache/CaviarDreams.ttf`)) {
+      let getfont3 = (await axios.get(`https://github.com/quyenkaneki/data/blob/main/CaviarDreams.ttf?raw=true`, { responseType: "arraybuffer" })).data;
+      fs.writeFileSync(__dirname + `/cache/CaviarDreams.ttf`, Buffer.from(getfont3, "utf-8"));
+    };
+   const { loadImage, createCanvas, registerFont } = require("canvas");
+
+  let k = args[0];
+   if(args[0] == "list"){
+    const alime = (await axios.get('https://raw.githubusercontent.com/quyenkaneki/data/main/dataanime.json')).data
+    var count = alime.listAnime.length;
+      var data = alime.listAnime
+      var page = 1;
+      page = parseInt(args[1]) || 1;
+      page < -1 ? page = 1 : "";
+      var limit = 20;
+      var numPage = Math.ceil(count/limit);
+      var msg = ``;
+      for(var i = limit*(page - 1); i < limit*(page-1) + limit; i++){
+         if(i >= count) break;
+        msg += `[ ${i+1} ] - ${data[i].ID} | ${data[i].name}\n`;
+      }
+      msg += `Trang (${page}/${numPage})\nDùng ${global.config.PREFIX}${this.config.name} list <số trang>`;
+      return api.sendMessage(msg, event.threadID,event.messageID);
+   }
+  if(!k){
+  var id = Math.floor(Math.random() * 848) +1
+  } else {
+    var id = k
+  }
+    const lengthchar = (await axios.get('https://raw.githubusercontent.com/quyenkaneki/data/main/dataimganime.json')).data
+    console.log(lengthchar.length)
+    const Canvas = require('canvas');
+    let pathImg = __dirname + `/cache/${id}.png`;
+    let pathAva = __dirname + `/cache/${event.senderID}.png`;
+    let background = (await axios.get(encodeURI(`https://imgur.com/x5JpRYu.png`), { responseType: "arraybuffer" })).data;
+    fs.writeFileSync(pathImg, Buffer.from(background, "utf-8"));
+    let ava = (await axios.get(encodeURI(`${lengthchar[id].imgAnime}`), { responseType: "arraybuffer" })).data;
+    fs.writeFileSync(pathAva, Buffer.from(ava, "utf-8"));
+    const request = require('request');
+    const path = require('path');
+
+  //const a = Math.floor(Math.random() * 820) + 1
+
+
+let l1 = await loadImage(pathAva);
+    let a = await loadImage(pathImg);
+    let canvas = createCanvas(a.width, a.height);
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = lengthchar[id].colorBg;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(l1, -200, -200, 1200, 1200);
+    ctx.drawImage(a, 0, 0, canvas.width, canvas.height);
+     registerFont(__dirname + `/cache/phenomicon.ttf`, {
+      family: "phenomicon"
+    });
+    ctx.textAlign = "start";
+    ctx.strokeStyle = lengthchar[id].colorBg;
+    ctx.filter = "brightness(90%) contrast(110%)";
+    ctx.font = "130px phenomicon";
+    ctx.fillStyle = lengthchar[id].colorBg;
+    ctx.fillText(global.config.BOTNAME, 1200, 380);
+    ctx.beginPath();
+  ////////////////////////////////////////
+   registerFont(__dirname + `/cache/UTM-Avo.ttf`, {
+      family: "UTM"
+    });
+    ctx.textAlign = "start";
+    ctx.font = "70px UTM";
+    ctx.fillStyle = "#000000";
+    ctx.fillText(`${z_1} : ${x_1} : ${y_1} `, 980, 440);
+    ctx.restore();
+    ctx.save();
+registerFont(__dirname + `/cache/CaviarDreams.ttf`, {
+      family: "time"
+    });
+    ctx.textAlign = "start";
+    ctx.font = "55px time";
+    ctx.fillText("NAZRUL", 930, 540)
+    ctx.fillText("nazrul404github.com", 930, 610)
+    ctx.fillText("MD NAZRUL ISLAM", 930, 690)
+    ctx.restore();
+    ctx.save();
+    ctx.beginPath();
+    const imageBuffer = canvas.toBuffer();
+   fs.writeFileSync(pathImg, imageBuffer);
+  return api.sendMessage({
+    body: `𝐒𝐞𝐫𝐯𝐞𝐫 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧\n\n𝐂𝐡𝐢𝐩: ${chips}.\n𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐒𝐩𝐞𝐞𝐝: ${speed}MHz.\n𝐓𝐨𝐭𝐚𝐥 𝐌𝐞𝐦𝐨𝐫𝐲: ${byte2mb(os.totalmem())}.\n𝐔𝐬𝐞𝐝: ${byte2mb(os.freemem())} (${(os.freemem() * 100 / os.totalmem()).toFixed()}%).\n𝐁𝐨𝐭 𝐢𝐬 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 𝐔𝐩\n      ${hours}  . ${minutes} . ${seconds}  \n❯ 𝐓𝐨𝐭𝐚𝐥 𝐔𝐬𝐞𝐫𝐬: ${global.data.allUserID.length}\n❯ 𝐓𝐨𝐭𝐚𝐥 𝐆𝐫𝐨𝐮𝐩: ${global.data.allThreadID.length}\n❯ 𝐂𝐏𝐔 𝐢𝐧 𝐔𝐬𝐞: ${pidusage.cpu.toFixed(1)}%\n❯ 𝐑𝐚𝐦 𝐢𝐧 𝐔𝐬𝐞: ${byte2mb(pidusage.memory)}\n❯ 𝐏𝐢𝐧𝐠: ${Date.now() - timeStart}ms\n❯ 𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫 𝐈𝐃: ${id}\n❯ 𝐀𝐝𝐦𝐢𝐧 𝐋𝐢𝐧𝐤:\nhttps://www.facebook.com/ji.la.pi.6`,
+    attachment: fs.createReadStream(pathImg)
+  },
+    event.threadID,
+    () => fs.unlinkSync(pathImg),
+    fs.unlinkSync(pathAva),
+    event.messageID
+  );
+}
