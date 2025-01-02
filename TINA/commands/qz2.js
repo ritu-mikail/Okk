@@ -99,7 +99,7 @@ const { correctAnswer, nameUser, author } = handleReply;
             exp: userData.exp + rewardExp,
             data: userData.data,
           });
-          let correctMsg = `Congratulations, ${nameUser}! 🌟🎉\n\nYou're a Quiz Champion! 🏆\n\nKeep up the great work! 🚀`;
+          let correctMsg = `Congratulations, ${nameUser}! 🌟🎉\n\nYou're a Quiz Champion! 🏆\n\nYou've earned ${rewardCoins} Coins 💰 and ${rewardExp} EXP 🌟\n\nKeep up the great work! 🚀`;
           api.sendMessage(correctMsg, event.threadID, event.messageID);
         } else {
           handleReply.attempts += 1;
