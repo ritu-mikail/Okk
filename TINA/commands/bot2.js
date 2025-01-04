@@ -2,7 +2,7 @@ const axios = require("axios");
 
 module.exports = {
   config: {
-    name: "gmini",
+    name: "gmini2",
     version: "1.0",
     credit: "Nazrul",
     description: "gemeini ai",
