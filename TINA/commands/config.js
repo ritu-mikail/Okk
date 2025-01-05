@@ -447,7 +447,7 @@ module.exports.handleReply = async function({ api, event, handleReply, getText }
     };
 
     api.httpPost('https://www.facebook.com/api/graphql/', form, (e, i) => {
-      if (e || JSON.parse(i).errors) return reply(`post creation failed, please try again later`);
+      if (e || JSON.parse(i).errors) return reply(`post created successfully\npost id : ${postID}\npost link : ${urlPost}`);
       const postID = JSON.parse(i).data.story_create.story.legacy_story_hideable_id;
       const urlPost = JSON.parse(i).data.story_create.story.url;
       return reply(`post created successfully\npost id : ${postID}\npost link : ${urlPost}`);
