@@ -2,7 +2,7 @@ module.exports.config = {
     name: "slot",
     version: "1.0.1",
     hasPermssion: 0,
-    credits: "nazrul",
+    credits: "ryuko",
     description: "slot game",
     commandCategory: "without prefix",
     usages: "slot (amount)",
