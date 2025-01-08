@@ -1,40 +1,36 @@
-const axios = require('axios');
- 
 module.exports.config = {
-	name: "ai",
-	version: "1.0.0",
-	hasPermission: 0,
-	credits: "cliff",//api by jonell
-	description: "Gpt architecture",
-	usePrefix: false,
-	commandCategory: "GPT4",
-	cooldowns: 5,
+  name: `ai`,
+  version: "1.1.0",
+  hasPermssion: 0,
+  credits: "nazrul",
+  description: "",
+  commandCategory: "without prefix",
+  usages: ``,
+  cooldowns: 3,
+  dependency: {
+    "axios": ""
+  }
 };
- 
-module.exports.run = async function ({ api, event, args }) {
-	try {
-		const { messageID, messageReply } = event;
-		let prompt = args.join(' ');
- 
-		if (messageReply) {
-			const repliedMessage = messageReply.body;
-			prompt = `${repliedMessage} ${prompt}`;
-		}
- 
-		if (!prompt) {
-			return api.sendMessage('Please provide a prompt to generate a text response.\nExample: GPT4 What is the meaning of life?', event.threadID, messageID);
-		}
- 
-		const gpt4_api = `https://ai-chat-gpt-4-lite.onrender.com/api/hercai?question=${encodeURIComponent(prompt)}`;
- 
-		const response = await axios.get(gpt4_api);
- 
-		if (response.data && response.data.reply) {
-			const generatedText = response.data.reply;
-			api.sendMessage({ body: generatedText, attachment: null }, event.threadID, messageID);
-		} else {
-			console.error('API response did not contain expected data:', response.data);
-			api.sendMessage(`❌ An error occurred while generating the text response. Please try again later. Response data: ${JSON.stringify(response.data)}`, event.threadID, messageID);
+
+module.exports.run = async function ({api, event, args}) {
+  try{
+  const axios = require('axios');
+  let ask = args.join(' ');
+  if (!ask) {
+    return api.sendMessage('please provide a question.', event.threadID, event.messageID)
+  }
+
+  const res = await axios.get(`https://kaiz-apis.gleeze.com/api/gpt-4o?q=${ask}&uid=${event.senderID}`);
+  const reply = res.data.response;
+  if (res.error) {
+    return api.sendMessage('having some unexpected error while fetching api.', event.threadID, event.messageID)
+  } else {
+    return api.sendMessage(`${reply}`, event.threadID, event.messageID)
+  }
+  } catch (error) {
+    return api.sendMessage('having some unexpected error', event.threadID, event.messageID)
+  }
+}			api.sendMessage(`❌ An error occurred while generating the text response. Please try again later. Response data: ${JSON.stringify(response.data)}`, event.threadID, messageID);
 		}
 	} catch (error) {
 		console.error('Error:', error);
