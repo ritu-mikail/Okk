@@ -1,5 +1,5 @@
   exports.config = {
-name: '4k',
+name: '8k',
 version: '0.0.1',
 hasPermssion: 0,
 credits: 'DC-Nam',
