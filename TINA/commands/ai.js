@@ -7,11 +7,9 @@ module.exports.config = {
   commandCategory: "without prefix",
   usages: ``,
   cooldowns: 3,
-  dependencies: {
-    "axios": "",
-    "fs-extra": "",
-    "request": ""
-  } 
+  dependency: {
+    "axios": ""
+  }
   
 };
 
