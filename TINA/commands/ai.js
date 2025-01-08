@@ -7,9 +7,7 @@ module.exports.config = {
   commandCategory: "without prefix",
   usages: ``,
   cooldowns: 3,
-  dependency: {
-    "axios": ""
-  }
+  
 };
 
 module.exports.run = async function ({api, event, args}) {
@@ -30,11 +28,4 @@ module.exports.run = async function ({api, event, args}) {
   } catch (error) {
     return api.sendMessage('having some unexpected error', event.threadID, event.messageID)
   }
-}			api.sendMessage(`❌ An error occurred while generating the text response. Please try again later. Response data: ${JSON.stringify(response.data)}`, event.threadID, messageID);
-		}
-	} catch (error) {
-		console.error('Error:', error);
-		api.sendMessage(`❌ An error occurred while generating the text response. Please try again later. Error details: ${error.message}`, event.threadID, event.messageID);
-	}
-};
- 
+}
