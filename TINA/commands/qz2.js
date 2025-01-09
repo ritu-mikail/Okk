@@ -9,7 +9,7 @@ const baseApiUrl = async () => {
 
 module.exports = {
   config: {
-    name: "quiz2",
+    name: "qz",
     version: "1.0",
     credits: "Dipto",
     cooldowns: 0,
@@ -99,8 +99,8 @@ const { correctAnswer, nameUser, author } = handleReply;
             exp: userData.exp + rewardExp,
             data: userData.data,
           });
-          let correctMsg = `Congratulations, ${nameUser}! 🌟🎉\n\nYou're a Quiz Champion! 🏆\n\nKeep up the great work! 🚀`;
-          api.sendMessage(correctMsg, event.threadID, event.messageID);
+          api.sendMessage(`Congratulations, ${nameUser}! 🌟🎉\n\nYou're a Quiz Champion! 🏆\n\nKeep up the great work! 🚀`;
+           event.threadID, event.messageID);
         } else {
           handleReply.attempts += 1;
 global.client.handleReply.push(handleReply.messageID, handleReply);
