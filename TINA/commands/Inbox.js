@@ -1,10 +1,10 @@
 this.config = {
-    name: "inbox",
+    name: "in",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "DongDev",
-    description: "Contact thành viên trong nhóm",
-    commandCategory: "Công Cụ",
+    credits: "in",
+    description: "",
+    commandCategory: "admin",
     usages: "",
     cooldowns: 5,
   };
