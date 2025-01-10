@@ -6,11 +6,10 @@
 module.exports.config = {
     name: "kiss2",
     version: "2.0.0",
-    permission: 0,
+    hasPermssion: 0,
     credits: "nazrul",
-    prefix: true,
     description: "",
-    category: "Love",
+    commandCategory: "Love",
     usages: "[tag]",
     cooldowns: 5,
     dependencies: {
@@ -71,7 +70,7 @@ async function circle(image) {
 
 module.exports.run = async function ({ event, api, args, Currencies }) { 
     const fs = global.nodemodule["fs-extra"];
-    const ae = ["💚Yeuanh❤","💛Yeuem💜"];
+    const ae = ["সেই সাধ💋💋\nএত সাধ ক্যা😁"];
     const hc = Math.floor(Math.random() * 101) + 101;
     const rd = Math.floor(Math.random() * 10) + 1;
     const { threadID, messageID, senderID } = event;
@@ -81,6 +80,6 @@ module.exports.run = async function ({ event, api, args, Currencies }) {
   
   if (!two) return api.sendMessage("Please tag 1 person", threadID, messageID);
   else {
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: `${ae[Math.floor(Math.random() * ae.length)]}\n Horimism to you after being kissing is ${hc} %\n + ${((hc)*rd)} $`, attachment: fs.createReadStream(path)}, threadID, () => fs.unlinkSync(path), messageID));
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: `${ae[Math.floor(Math.random() * ae.length)]}`, attachment: fs.createReadStream(path)}, threadID, () => fs.unlinkSync(path), messageID));
   }
 }
