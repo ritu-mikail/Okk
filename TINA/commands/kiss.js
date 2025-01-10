@@ -1,11 +1,10 @@
 module.exports.config = {
   name: "kiss",
   version: "2.0.0",
-  permssion: 0,
-  prefix: true,
-  credits: "Clarence DK",
+  hasPermssion: 0,
+  credits: "Nazrul",
   description: "Get fuck",
-  category: "img",
+  commandCategory: "img",
   usages: "[@mention]",
   cooldowns: 5,
   dependencies: {
@@ -76,6 +75,6 @@ module.exports.run = async function ({ event, api, args, Currencies }) {
 
   if (!two) return api.sendMessage("Please tag 1 person", threadID, messageID);
   else {
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: `${ae[Math.floor(Math.random() * ae.length)]}\n Horimism to you after being kissing is ${hc} %\n + ${((hc)*rd)} $`, attachment: fs.createReadStream(path)}, threadID, () => fs.unlinkSync(path), messageID));
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: `${ae[Math.floor(Math.random() * ae.length)]}`, attachment: fs.createReadStream(path)}, threadID, () => fs.unlinkSync(path), messageID));
   }
   }
