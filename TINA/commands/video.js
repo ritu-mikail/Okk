@@ -4,7 +4,6 @@ const fs = require("fs");
 
 module.exports.config = {
   name: "video",
-  version: "9",
   credits: "nazrul",
   description: "Search video from YouTube",
   commandCategory: "media",
