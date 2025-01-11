@@ -11,7 +11,6 @@ module.exports.config = {
   hasPermssion: 0,
   cooldowns: 9,
   usages: "[video [search]",
-  hasPrefix: false,
 };
 
 module.exports.run = async function ({ api, args, event }) {
