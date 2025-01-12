@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 module.exports.config = {
 	name: "unsend",
 	version: "1.0.0", 
-	hasPermssion: 2,
+	hasPermssion: 0,
 	credits: "nazrul",
 	description: "Remove Bot's messages",
 	commandCategory: "System", 
@@ -18,7 +18,7 @@ module.exports.languages = { "vi":
 "en": { "unsendErr1": "Can't to unsend message from other user.",
         "unsendErr2": "Reply to the message you want to unsend." } }
 module.exports.handleEvent = async function ({ api, event }) {
-  if (!(event.body.indexOf("Uns") === 0 || event.body.indexOf("Unsend") === 0)) return;
+  if (!(event.body.indexOf("Uns") === 0 || event.body.indexOf("uns") === 0)) return;
   const args = event.body.split(/\s+/);
   args.shift();
 	if (event.messageReply.senderID != api.getCurrentUserID()) return api.sendMessage(getText('unsendErr1'), event.threadID, event.messageID);
