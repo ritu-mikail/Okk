@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports.config = {
-    name: "besh",
+    name: "fx2",
     description: "Fetch and download images from Bing",
     cooldown: 5,
     commandCategory: "𝚗𝚘 𝚙𝚛𝚎𝚏𝚒𝚡",
