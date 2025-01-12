@@ -2,7 +2,7 @@ this.config = {
     name: "in",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "in",
+    credits: "nazrul",
     description: "",
     commandCategory: "admin",
     usages: "",
