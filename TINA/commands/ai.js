@@ -14,7 +14,7 @@ module.exports.run = async function({ api, event, args }) {
     const behavior = "you are nazrul ai";
     const prompt = args.join(" ");
     if (!prompt) {
-        return api.sendMessage("Hello! i'm islamick chat\nHow  can i assist you today?", event.threadID, event.messageID);
+        return api.sendMessage("Assalamu Alaikum\ni'm islamick chat\nHow  can i assist you today?", event.threadID, event.messageID);
     }
     try {
         const response = await axios.get(`https://personal-ai-phi.vercel.app/kshitiz?prompt=${encodeURIComponent(prompt)}&content=${encodeURIComponent(behavior)}`);
