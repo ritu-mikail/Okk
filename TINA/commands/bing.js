@@ -9,7 +9,7 @@ module.exports = {
     commandCategory: "game",
    hasPermssion: 0,
   },
-  run: async (api, event, args) => {
+  module.exports.run = async function ({ api, event, args }) {
     try {
       let query = args.join(" ");
       if (!query) return reply("Please provide a prompt", event);
