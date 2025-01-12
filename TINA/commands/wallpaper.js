@@ -3,7 +3,7 @@ const fs = require("fs-extra");
 const path = require("path");
 
 module.exports.config = {
-  name: "Wallpaper",
+  name: "wallpaper",
   version: "1.0.0",
   hasPermission: 0,
   credits: "naztul",
