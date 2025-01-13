@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports.config = {
-  name: "imagine4",
+  name: "imagine5",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Jonell Magallanes",
