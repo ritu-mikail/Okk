@@ -3,12 +3,13 @@ const axios = require('axios');
 module.exports.config = {
   name: "sim",
   version: 1.0,
+ hasPermssion: 0,
   credits: "nazrul",
   description: "Talk to Sim! Type your message to get a response.",
   hasPrefix: false,
   usages: "{pn} [message]",
   commandCategory: "fun",
-  cooldown: 5,
+  cooldowns: 5,
 };
  
 module.exports.run = async function ({ api, event, args }) {
