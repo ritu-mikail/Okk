@@ -28,7 +28,7 @@ module.exports.config = {
         }
     },
 
-start: async function ({ nayan, events, args, lang }) {
+run: async function ({ api, events, args, lang }) {
   const axios = require("axios");
   const fs = require("fs-extra");
   const content = args.join(" ");
