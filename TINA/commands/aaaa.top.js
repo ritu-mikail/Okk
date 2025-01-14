@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "top",
+	name: "top2",
 	version: "1.0.6",
 	hasPermssion: 0,
 	credits: "Siegfried Sama",
