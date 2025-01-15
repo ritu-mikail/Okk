@@ -1,11 +1,11 @@
 const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
-  name: "لفل",
+  name: "rank",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "عمر",
-  description: "لفلك",
-  commandCategory: "العاب",
+  credits: "nazrul",
+  description: "",
+  commandCategory: "",
   cooldowns: 5,
   dependencies: {
     "fs-extra": "",
@@ -55,12 +55,12 @@ module.exports.makeRankCard = async (data) => {
 
     const { id, name, rank, level, expCurrent, expNextLevel } = data;
 
-  Canvas.registerFont(__root + "/SplineSans-Medium.ttf", {
+  Canvas.registerFont(__root + "/regular-font.ttf", {
     family: "Manrope",
     weight: "regular",
     style: "normal"
   });
-  Canvas.registerFont(__root + "/SplineSans-Medium.ttf", {
+  Canvas.registerFont(__root + "/bold-font.ttf", {
     family: "Manrope",
     weight: "bold",
     style: "normal"
