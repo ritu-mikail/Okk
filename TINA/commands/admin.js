@@ -28,7 +28,7 @@ dependencies: {
 
 module.exports.run = async function({ api, event, args }) {
 
-const configPath = './nazrul.json';
+const configPath = './Nazrul.json';
 
 // Load the config file
 
