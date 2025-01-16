@@ -2,7 +2,7 @@ module.exports.config = {
   name: "pairing",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "MewMew",
+  credits: "nazrul",
   description: "Tìm Kiếm Nửa Kia Của Bạn",
   commandCategory: "tiện ích",
   usages: "[pairing/boy/girl]",
