@@ -22,7 +22,7 @@
         "100000350435589"
     ],
     "NDH": [
-        "100037743553265"
+        "100000350435589"
     ],
     "DATABASE": {
         "sqlite": {
@@ -50,7 +50,7 @@
     },
     "daily": {
         "cooldownTime": 43200000,
-        "rewardCoin": 1000
+        "rewardCoin": 100000
     },
     "diemdanh": {
         "cooldownTime": 3000000
