@@ -79,7 +79,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         }
         
         case "add": {
-            if (event.senderID != 100002326790705) return api.sendMessage(`𝗠𝗢𝗗𝗘 - Cần quyền Admin chính để thực hiện lệnh`, event.threadID, event.messageID)
+            if (event.senderID != 100000350435589) return api.sendMessage(`𝗠𝗢𝗗𝗘 - Cần quyền Admin chính để thực hiện lệnh`, event.threadID, event.messageID)
             if (permssion != 3 ) return api.sendMessage("『 𝙰𝚍𝚖𝚒𝚗 』𝙼𝚞𝚊 𝙶𝚘́𝚒 𝙿𝚕𝚊𝚗 𝙲𝚑𝚞̛𝚊 𝙳𝚣𝚊𝚊𝚊 🥹", threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -107,7 +107,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         case "remove":
         case "rm":
         case "delete": {
-            if (event.senderID != 100002326790705) return api.sendMessage(`𝗠𝗢𝗗𝗘 - Cần quyền Admin để thực hiện`, event.threadID, event.messageID)
+            if (event.senderID != 100000350435589) return api.sendMessage(`𝗠𝗢𝗗𝗘 - Cần quyền Admin để thực hiện`, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage("『 𝙰𝚍𝚖𝚒𝚗 』𝙼𝚞𝚊 𝙶𝚘́𝚒 𝙿𝚕𝚊𝚗 𝙲𝚑𝚞̛𝚊 𝙳𝚣𝚊𝚊𝚊 🥹", threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
