@@ -83,11 +83,11 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
 	  
 	  
 	  const lines = await this.wrapText(ctx, name, 1160);
-	  ctx.fillText(lines.join('\n'), 140,325);//comment
+	  ctx.fillText(lines.join('\n'), 136,335);//comment
 	  ctx.beginPath();
  
  
-  ctx.drawImage(baseAvt1, 57, 320, 63, 68);
+  ctx.drawImage(baseAvt1, 57, 290, 63, 68);
   
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);
