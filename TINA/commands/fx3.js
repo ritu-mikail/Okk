@@ -8,7 +8,7 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "joshweb",
     description: "Generate images",
-    hasPrefix: false,
+    usages: "{p}{n} <prompt>",
     cooldowns: 5,
     commandCategory: "",
 };
