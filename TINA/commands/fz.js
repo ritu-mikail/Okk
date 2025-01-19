@@ -29,7 +29,7 @@ module.exports.run = async function ({ api, event, args }) {
             }, event.messageID);
         });
 
-        const apiUrl = `https://sandipbaruwal.onrender.com/gen.html?prompt=${encodeURIComponent(prompt)}`;
+        const apiUrl = `https://sandipbaruwal.onrender.com/gen?prompt=${encodeURIComponent(prompt)}`;
 
         const h = await axios.get(apiUrl, { responseType: 'stream' });
 
