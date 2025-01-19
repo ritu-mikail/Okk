@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "rank",
 	version: "1.0.2",
 	hasPermssion: 0,
-	credits: "Duy Cute UwU",
+	credits: "nazrul",
 	description: "Lấy rank hiện tại của bạn trên hệ thống bot remake rank_card from canvacord",
 	commandCategory: "Hệ Thống",
 	cooldowns: 5,
@@ -31,12 +31,12 @@ module.exports.makeRankCard = async (data) => {
 
     const { id, name, rank, level, expCurrent, expNextLevel } = data;
 	
-	Canvas.registerFont(await global.utils.assets.font("REGULAR-FONT"), {
+	Canvas.registerFont(await global.utils.assets.font("regular-font.ttf"), {
 		family: "Manrope",
 		weight: "regular",
 		style: "normal"
 	});
-	Canvas.registerFont(await global.utils.assets.font("BOLD-FONT"), {
+	Canvas.registerFont(await global.utils.assets.font("bold-font.ttf"), {
 		family: "Manrope",
 		weight: "bold",
 		style: "normal"
@@ -163,4 +163,4 @@ module.exports.run = async ({ event, api, args, Currencies, Users }) => {
 			return api.sendMessage({ attachment: fs.createReadStream(pathRankCard) }, event.threadID, () => fs.unlinkSync(pathRankCard), event.messageID);
 		}
 	}
-    }
+}
