@@ -26,7 +26,7 @@ module.exports.run = async function ({ api, event, args, actions }) {
   if (!fs.existsSync(path.join(__dirname, 'cache'))) fs.mkdirSync(path.join(__dirname, 'cache'), { recursive: true });
 
   try {
-    const response = await axios.get(`https://sandipbaruwal.onrender.com/image?prompt=${encodeURIComponent(prompt)}`, {
+    const response = await axios.get(`https://sandipbaruwal.onrender.com/gen.html?prompt=${encodeURIComponent(prompt)}`, {
       responseType: 'arraybuffer'
     });
 
