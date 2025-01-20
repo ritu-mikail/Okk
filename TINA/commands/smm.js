@@ -2,7 +2,7 @@ const axios = require('axios');
 const { unlinkSync, writeFileSync, createReadStream } = require('fs-extra');
 
 module.exports.config = {
-   name: "stalk",
+   name: "smm",
    version: "1.0", 
    author: "karan",
    hasPermission: 0,
