@@ -10,11 +10,11 @@ module.exports = {
   config: {
     name: "spy",
     version: "1.0",
-    hasPermission: 0,
+    hasPermssion: 0,
     usePrefix: true,
     credits: "Dipto",
     description: "Get user information and profile photo",
-    category: "information",
+    commandCategory: "information",
     cooldowns: 10,
   },
 
