@@ -3,7 +3,7 @@ module.exports = {
 		name: "autodownloadll",
 		version: "1.3.0",
 		hasPermssion: 2,
-		credits: "Priyansh Rajput",
+		credits: "nazrul",
 		description: "Auto download videos from Facebook links with status reactions.",
 		commandCategory: "Media",
 		usages: "[auto-detect]",
