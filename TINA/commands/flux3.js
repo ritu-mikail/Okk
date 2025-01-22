@@ -11,12 +11,12 @@ module.exports = {
   config: {
     name: "flux3",
     version: "2.0",
-    hasPermission: 0,
+    hasPermssion: 0,
     credits: "xnil",
     description: "Generate images with Flux.1 Pro",
     commandCategory: "ai image",
     usages: "{pn} [prompt]",
-    countDown: 15,
+    countDowns: 15,
   },
 
   module.exports.run: async function({ event, args, api }) {
