@@ -9,7 +9,7 @@ const baseApiUrl = async () => {
 
 module.exports = {
   config: {
-    name: "flux",
+    name: "flux3",
     version: "2.0",
     hasPermission: 0,
     credits: "xnil",
