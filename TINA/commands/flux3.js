@@ -9,7 +9,7 @@ const baseApiUrl = async () => {
 
 module.exports = {
   config: {
-    name: "flux3",
+    name: "flux",
     version: "2.0",
     hasPermission: 0,
     credits: "xnil",
@@ -19,7 +19,7 @@ module.exports = {
     countDown: 15,
   },
 
-  run: async function({ event, args, api }) {
+  module.exports.run: async function({ event, args, api }) {
     try {
       const prompt = args.join(" ");
       const startTime = new Date().getTime();
