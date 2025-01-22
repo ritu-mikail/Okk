@@ -24,7 +24,7 @@ return "User";
 
 module.exports.config = {
 
-name: "jail2",
+name: "art10",
 
 version: "1.0.0",
 
