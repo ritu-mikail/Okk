@@ -12,15 +12,13 @@ module.exports.config = {
   hasPermission: 2,
   credits: "Dipto",
   usePrefix: true,
-  prefix: true,
   description: "Generate images with Flux.1 Pro",
   commandCategory: "𝗜𝗠𝗔𝗚𝗘 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥",
-  preimum: true,
   usages: "{pn} [prompt] --ratio 1024x1024\n{pn} [prompt]",
   cooldowns: 15,
 };
 
-module.exports.onStart = async ({ event, args, api }) => {
+module.exports.run = async ({ event, args, api }) => {
   try {
   const prompt = args.join(" ");
   /*let prompt2, ratio;
