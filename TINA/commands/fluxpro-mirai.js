@@ -18,7 +18,7 @@ module.exports.config = {
   cooldowns: 15,
 };
 
-module.exports.run = async ({ event, args, api }) => {
+run = async ({ event, args, api }) => {
   try {
   const prompt = args.join(" ");
   /*let prompt2, ratio;
