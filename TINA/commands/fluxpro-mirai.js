@@ -21,7 +21,7 @@ module.exports.config = {
 run: async ({ event, args, api }) => {
   try {
   const prompt = args.join(" ");
-  /*let prompt2, ratio;
+  let prompt2, ratio;
   if (prompt.includes("--ratio")) {
     const parts = prompt.split("--ratio");
     prompt2 = parts[0].trim();
