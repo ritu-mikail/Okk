@@ -29,7 +29,7 @@ module.exports.run = async function ({ api, event, args }) {
             }, event.messageID);
         });
 
-        const apiUrl = `https://xnilnew404.onrender.com/xnil/flux?prompt=?prompt=${encodeURIComponent(prompt)}`;
+        const apiUrl = `https://xnilnew404.onrender.com/xnil/flux?prompt=${encodeURIComponent(prompt)}`;
 
         const h = await axios.get(apiUrl, { responseType: 'stream' });
 
