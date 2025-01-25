@@ -153,7 +153,7 @@ try{
 module.exports.handleEvent = async function ({ api, event, Users, }) {
 try{
     const body = event.body ? event.body.toLowerCase() : ""
-    if(body.startsWith("nazrul") || body.startsWith("neha") || body.startsWith("নজরুল")){
+    if(body.startsWith("nazrul") || body.startsWith("sumi") || body.startsWith("সুমি")){
 var id = event.senderID;
     var name = await Users.getNameUser(event.senderID);
         const arr = body.replace(/^\S+\s*/, "")
