@@ -1,8 +1,8 @@
 module.exports.config = {
     name: "adminonly",
     version: "1.0",
-    hasPermssion: 1,
-    credits: "D-Jukie fix Kadeer",
+    hasPermssion: 2,
+    credits: "nazrul",
     description: "Admin only",
     commandCategory: "Admin",
     usages: "qtvonly",
