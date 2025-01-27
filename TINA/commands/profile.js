@@ -6,6 +6,7 @@ module.exports.config = {
   usePrefix: true,
 	description: "view fb pp ",
 	commandCategory: "system",
+	usages: "qtvonly",
 	cooldowns:20
 };
 
