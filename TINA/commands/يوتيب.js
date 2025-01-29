@@ -5,7 +5,7 @@ module.exports.config = {
   name: "يوتيب",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "CatalizCS mod video by Đăng",
+  credits: "nazrul",
   description: "تشغيل فيديوهات من اليوتيوب",
   commandCategory: "قــســم الــادوات",
   usages: "يوتيب [إسم الفيديو]",
