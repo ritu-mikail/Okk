@@ -6,7 +6,7 @@ name: "admin",
 
 version: "1.0.0",
 
-hasPermssion: 1,
+hasPermssion: 2,
 
 credits: "nazrul",
 
