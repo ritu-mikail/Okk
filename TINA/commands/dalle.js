@@ -1,7 +1,7 @@
 module.exports.config = {
-  name: "dalle",
+  name: "poli",
   version: "1.0.",
-  hasPermssion: 2,
+  hasPermssion: 0,
   credits: "nazrul",
   description: "generate image from polination",
   usePrefix: false,
