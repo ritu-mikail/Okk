@@ -1,7 +1,6 @@
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
-const { kaizen } = require('../api');
 
 module.exports.config = {
     name: 'rem',
@@ -26,7 +25,7 @@ module.exports.run = async function ({ api, event }) {
         return api.sendMessage('This command only works with image attachments.', threadID, messageID);
 
     const imageUrl = attachment.url;
-    const upscaleApi = `${kaizen}/api/upscale?url=${encodeURIComponent(imageUrl)}`;
+    const upscaleApi = `https://kaiz-apis.gleeze.com/api/upscale?url=${encodeURIComponent(imageUrl)}`;
     const tempFilePath = path.resolve(__dirname, 'upscaled_image.jpeg');
 
     let loadingMessageID;
