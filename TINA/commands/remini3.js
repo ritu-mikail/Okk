@@ -8,7 +8,7 @@ module.exports.config = {
     version: '1.1.0',
     hasPermssion: 0,
     hasPrefix: true,
-    commandCategory: [],
+    commandCategory: '',
     description: '',
     usage: '',
     credits: 'nazrul',
