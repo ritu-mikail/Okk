@@ -4,59 +4,59 @@ const path = require('path');
 
 module.exports.config = {
     name: 'rem',
-    version: '1.1.0',
+    version: '1.0.2',
     hasPermssion: 0,
     hasPrefix: true,
-    commandCategory: '',
-    description: '',
-    usage: '',
-    credits: 'nazrul',
-    cooldown: 5,
+    commandCategory: "without prefix",
+    description: 'Chat with AI assistant',
+    usage: 'ai <message>',
+    credits: 'churchill',
+    cooldown: 3,
 };
 
-module.exports.run = async function ({ api, event }) {
-    const { messageReply, threadID, messageID } = event;
+module.exports.run = async function ({ api, event, args }) {
+    if (!args.length) return api.sendMessage('❌ Please provide a message.', event.threadID, event.messageID);
 
-    if (!messageReply || !messageReply.attachments || messageReply.attachments.length === 0)
-        return api.sendMessage('Reply to an image to upscale it.', threadID, messageID);
-
-    const attachment = messageReply.attachments[0];
-    if (attachment.type !== 'photo')
-        return api.sendMessage('This command only works with image attachments.', threadID, messageID);
-
-    const imageUrl = attachment.url;
-    const upscaleApi = `https://kaiz-apis.gleeze.com/api/upscale?url=${encodeURIComponent(imageUrl)}`;
-    const tempFilePath = path.resolve(__dirname, 'upscaled_image.jpeg');
-
-    let loadingMessageID;
+    const userMessage = args.join(' ');
+    const apiUrl = `http://sgp1.hmvhostings.com:25721/gemini?question=${encodeURIComponent(userMessage)}`;
 
     try {
-        const loadingMessage = await api.sendMessage('Upscaling image...', threadID, messageID);
-        loadingMessageID = loadingMessage.messageID;
+        api.sendMessage('🔎 Thinking...', event.threadID, async (err, info) => {
+            if (err) return;
 
-        const response = await axios.get(upscaleApi, { responseType: 'stream' });
-        const writer = fs.createWriteStream(tempFilePath);
-        response.data.pipe(writer);
+            const response = await axios.get(apiUrl);
+            const data = response.data;
+            
+            const answerText = (data.answer || '').trim();
 
-        await new Promise((resolve, reject) => {
-            writer.on('finish', resolve);
-            writer.on('error', reject);
+            if (data.web_images.length > 0) {
+                const imageUrl = data.web_images[0];
+                const imagePath = path.join(__dirname, 'ai_image.jpg');
+
+                const imageResponse = await axios.get(imageUrl, { responseType: 'stream' });
+                const writer = fs.createWriteStream(imagePath);
+
+                imageResponse.data.pipe(writer);
+
+                await new Promise((resolve, reject) => {
+                    writer.on('finish', resolve);
+                    writer.on('error', reject);
+                });
+
+                await api.sendMessage(
+                    {
+                        body: answerText,
+                        attachment: fs.createReadStream(imagePath),
+                    },
+                    event.threadID,
+                    () => fs.unlinkSync(imagePath),
+                    event.messageID
+                );
+            } else {
+                api.editMessage(answerText || '⚠️ No response received.', info.messageID);
+            }
         });
-
-        await api.sendMessage(
-            { attachment: fs.createReadStream(tempFilePath) },
-            threadID,
-            () => {
-                if (loadingMessageID) api.unsendMessage(loadingMessageID);
-            },
-            messageID
-        );
-
-        fs.unlinkSync(tempFilePath);
     } catch (error) {
-        console.error('Failed to upscale image:', error);
-        api.sendMessage('Failed to process the image. Try again later.', threadID, messageID);
-
-        if (loadingMessageID) api.unsendMessage(loadingMessageID);
+        api.sendMessage('❌ Error processing your request. Try again later.', event.threadID, event.messageID);
     }
 };
