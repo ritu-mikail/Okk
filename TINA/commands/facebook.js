@@ -2,7 +2,7 @@ module.exports.config = {
     name: "facebook",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "RAHAT",
+    credits: "nazrul",
     description: "Download video or record from fb",
   commandCategory: "utilities",
   usages: "audio/video [link]",
