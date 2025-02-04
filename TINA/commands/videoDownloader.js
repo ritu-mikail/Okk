@@ -1,92 +1,69 @@
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
+module.exports = {
+	config: {
+		name: "autodownloadll33",
+		version: "1.3.0",
+		hasPermssion: 2,
+		credits: "nazrul",
+		description: "Auto download videos from Facebook links with status reactions.",
+		commandCategory: "Media",
+		usages: "[auto-detect]",
+		cooldowns: 5,
+		dependencies: {
+			"axios": ""
+		}
+	},
+	handleEvent: async function({ api, event }) {
+		const axios = require('axios');
 
-module.exports.config = {
-  name: "videoDownloader",
-  version: "1.0.0",
-  hasPermission: 0,
-  credits: "Nazrul",
-  description: "Automatically downloads videos from TikTok, Facebook, and Instagram when a link is provided.",
-  commandCategory: "utility",
-  usages: "Send a TikTok, Facebook, or Instagram video link to download.",
-  cooldowns: 3,
+		if (event.type === "message" && event.body) {
+			if (event.body.startsWith("https://")) {
+				const url = event.body;
+				
+				// Set a pending reaction
+				api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
+
+				try {
+					const response = await axios.get(`https://gpt-19zs.onrender.com/alldl?url=${encodeURIComponent(url)}`);
+					const videoData = response.data.data[0];
+
+					if (!response.data.success || !videoData) {
+						// Set a cross reaction on error
+						api.setMessageReaction("❌", event.messageID, (err) => {}, true);
+						return api.sendMessage("", event.threadID, event.messageID);
+					}
+
+					const { title, like_count, videoUrl } = videoData;
+
+					await axios({
+						method: 'get',
+						url: videoUrl,
+						responseType: 'stream'
+					}).then(videoStream => {
+						api.sendMessage({
+							body: `Title: ${title}\nLikes: ${like_count}`,
+							attachment: videoStream.data
+						}, event.threadID, event.messageID);
+
+						// Set a checkmark reaction on success
+						api.setMessageReaction("✅", event.messageID, (err) => {}, true);
+
+					}).catch(error => {
+						// Set a cross reaction on error
+						api.setMessageReaction("❌", event.messageID, (err) => {
+							if (err) console.error(err);
+						});
+						api.sendMessage("", event.threadID, event.messageID);
+					});
+
+				} catch (error) {
+					// Set a cross reaction on error
+					api.setMessageReaction("❌", event.messageID, (err) => {}, true);
+					api.sendMessage("", event.threadID, event.messageID);
+				}
+			}
+		}
+	},
+	run: function() {
+		// The run function can be left empty or used for additional setup if needed.
+	}
 };
-
-async function downloadVideo(videoUrl, threadID, api) {
-  try {
-    const response = await axios.get(`https://gpt-19zs.onrender.com/alldl?url=${encodeURIComponent(videoUrl)}`);
-    if (response.data.status) {
-      const videoData = response.data.data;
-      const videoTitle = videoData.title;
-      const videoDownloadUrl = videoData.low;
-
-      const videoPath = path.resolve(__dirname, 'cache', `${videoTitle}.mp4`);
-      const videoStream = fs.createWriteStream(videoPath);
-
-      const videoResponse = await axios({
-        url: videoDownloadUrl,
-        method: 'GET',
-        responseType: 'stream',
-      });
-
-      videoResponse.data.pipe(videoStream);
-
-      videoStream.on('finish', () => {
-        api.sendMessage({
-          body: `𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐝 𝐘𝐨𝐮𝐫 𝐕𝐢𝐝𝐞𝐨 ${videoTitle}`,
-          attachment: fs.createReadStream(videoPath),
-        }, threadID, () => {
-          fs.unlinkSync(videoPath); // Delete video file after sending
-        });
-      });
-    } else {
-      api.sendMessage("Unable to download the video. Please ensure the link is correct.", threadID);
-    }
-  } catch (error) {
-    console.error(error);
-    api.sendMessage("Error: Failed to download the video.", threadID);
-  }
-}
-
-module.exports.handleReaction = async function({ api, event, handleReaction }) {
-  try {
-    if (event.userID != handleReaction.author) return;
-    const { threadID, messageID } = event;
-
-    // Start downloading the video
-    await downloadVideo(handleReaction.videoUrl, threadID, api);
-    
-    // Remove the reaction handler from global data
-    api.unsendMessage(handleReaction.messageID);
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-module.exports.handleEvent = async function({ api, event }) {
-  const { threadID, messageID, body } = event;
-
-  // Check if the message contains a TikTok, Facebook, or Instagram link
-  const regex = /(https?:\/\/(?:[a-zA-Z0-9-]+\.)?(tiktok\.com|facebook\.com|instagram\.com)\/[^\s]+)/gi;
-  const match = body.match(regex);
-
-  if (match) {
-    const videoUrl = match[0]; // Take the first matched URL
-
-    // Notify the user and ask them to react to the message to start the download
-    api.sendMessage("Reaction ❤️ to this message to download the video", threadID, (error, messageInfo) => {
-      if (error) return console.error(error);
-
-      // Store the reaction handler data
-      global.client.handleReaction.push({
-        name: "videoDownloader",
-        messageID: messageInfo.messageID,
-        author: event.senderID,
-        videoUrl: videoUrl
-      });
-    });
-  }
-};
-
-module.exports.run = async function({ api, event }) {};
