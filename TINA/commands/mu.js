@@ -20,7 +20,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
 
     const searchTerm = args.join(' ');
-    const searchApiUrl = `https://joncll.serv00.net/yt.php?search=${encodeURIComponent(searchTerm)}`;
+    const searchApiUrl = `https://joncll.serv00.net/yt.php?url=${encodeURIComponent(searchTerm)}`;
 
     let searchingMessageID;
 
