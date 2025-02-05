@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-		name: "autodownloadll33",
+		name: "autodownloadll",
 		version: "1.3.0",
 		hasPermssion: 2,
 		credits: "nazrul",
@@ -23,7 +23,7 @@ module.exports = {
 				api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
 
 				try {
-					const response = await axios.get(`https://gpt-19zs.onrender.com/alldl?url=${encodeURIComponent(url)}`);
+					const response = await axios.get(`https://priyansh-ai.onrender.com/autodown?url=${encodeURIComponent(url)}`);
 					const videoData = response.data.data[0];
 
 					if (!response.data.success || !videoData) {
