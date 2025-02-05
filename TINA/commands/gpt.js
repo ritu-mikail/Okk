@@ -14,7 +14,7 @@ module.exports = {
     cooldowns: 5,
   },
 
-  run: async function ({ api, events, args }) {
+  run: async function ({ api, event, args }) {
     try {
       const prompt = args.join(" ");
       const { data } = await axios.post("https://nayan-gpt4.onrender.com/gpt4", { prompt });
