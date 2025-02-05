@@ -20,7 +20,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
 
     const searchTerm = args.join(' ');
-    const searchApiUrl = `https://dlvc.vercel.app/yt-audio?search=${encodeURIComponent(searchTerm)}`;
+    const searchApiUrl = `https://joncll.serv00.net/yt.php?search=${encodeURIComponent(searchTerm)}`;
 
     let searchingMessageID;
 
