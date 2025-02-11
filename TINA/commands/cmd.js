@@ -2,7 +2,7 @@ module.exports.config = {
     name: "cmd",
     version: "1.0.0",
     hasPermssion: 2,
-    credits: "Priyansh Rajput",
+    credits: "nazrul",
     description: "Manage/Control all bot modules",
     commandCategory: "System",
     usages: "[load/unload/loadAll/unloadAll/info] [name module]",
@@ -105,7 +105,7 @@ const loadCommand = function ({ moduleList, threadID, messageID }) {
         };
     }
     if (errorList.length != 0) api.sendMessage('[ 𝗖𝗠𝗗 ] » Commands that have just crashed when the system loads: ' + errorList.join(' '), threadID, messageID);
-    api.sendMessage('[ 𝗖𝗠𝗗 ] » The Priyansh Bot system has just loaded successfully ' + (moduleList.length - errorList.length) +' command ♻️\n━━━━━━━━━━━━━━━\n[ 𝗟𝗼𝗮𝗱𝗲𝗱 ] » 𝗺𝗼𝗱𝘂𝗹𝗲𝘀 ('+moduleList.join(', ') + '.js) 💓', threadID, messageID) 
+    api.sendMessage('[ 𝗖𝗠𝗗 ] » The  Bot system has just loaded successfully ' + (moduleList.length - errorList.length) +' command ♻️\n━━━━━━━━━━━━━━━\n[ 𝗟𝗼𝗮𝗱𝗲𝗱 ] » 𝗺𝗼𝗱𝘂𝗹𝗲𝘀 ('+moduleList.join(', ') + '.js) 💓', threadID, messageID) 
     writeFileSync(configPath, JSON.stringify(configValue, null, 4), 'utf8')
     unlinkSync(configPath + '.temp');
     return;
