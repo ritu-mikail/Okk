@@ -20,7 +20,7 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
     }
 
     const video = handleReply.searchResults[selectedIndex];
-    const videoUrl = `https://yt-video-production.up.railway.app/ytdl?url=${encodeURIComponent(video.videoUrl)}`;
+    const videoUrl = `https://mr-prince-malhotra-ytdl.vercel.app/video?url=${encodeURIComponent(video.videoUrl)}`;
 
     api.sendMessage(`${video.title}\nভিডিও ডাউনলোড করা হচ্ছে\n1 মিনিট অপেক্ষা করুন`, event.threadID, async (err, info) => {
       setTimeout(() => api.unsendMessage(info.messageID), 20500);
@@ -61,7 +61,7 @@ module.exports.run = async function({ api, event, args }) {
   if (args.length === 0) return api.sendMessage("⚠️ একটি  গানের নাম বলো", event.threadID, event.messageID);
 
   const query = args.join(" ");
-  const apiUrl = `https://mr-prince-malhotra-ytdl.vercel.app/video?query=${encodeURIComponent(query)}`;
+  const apiUrl = `https://c-v1.onrender.com/yt/s?query=${encodeURIComponent(query)}`;
 
   try {
     const response = await axios.get(apiUrl);
