@@ -5,7 +5,7 @@ module.exports.config = {
   name: "listcommands",
   version: "1.0",
   hasPermission: 0,
-  credits: "RICKCIEL",
+  credits: "Nazrul",
   usePrefix: true,
   description: "Lists all available commands.",
   commandCategory: "setting",
