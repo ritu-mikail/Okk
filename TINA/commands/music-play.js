@@ -19,8 +19,8 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
 	const { createReadStream, createWriteStream, unlinkSync, statSync,readFileSync,writeFileSync } = require("fs-extra");
 	 const { join } = require("path");
 	const axios = require("axios"); 
-	//var { data:Res } = await axios.get("http://localhost:1337/api/f-apis/3");
-		// var x = await Res.data.attributes.Api;
+	var { data:Res } = await axios.get("http://localhost:1337/api/f-apis/3");
+		var x = await Res.data.attributes.Api;
 	let datac = (await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${handleReply.link[event.body - 1]}&key=${keyapi}`)).data;
 	let title = datac.items[0].snippet.title;
     api.sendMessage(title,event.threadID);
@@ -44,8 +44,8 @@ module.exports.run = async function({ api, event, args,help }) {
 		const { createReadStream, createWriteStream, unlinkSync, statSync,readFileSync,writeFileSync } = require("fs-extra");
 	 const { join } = require("path");
 	 const axios = require("axios");
-	//var { data:Res } = await axios.get("http://localhost:1337/api/f-apis/3");
-		//var x = await Res.data.attributes.Api;
+	var { data:Res } = await axios.get("http://localhost:1337/api/f-apis/3");
+		var x = await Res.data.attributes.Api;
 	const ytdl = require("ytdl-core");
 	const YouTubeAPI = require("simple-youtube-api");
 	const youtube = new YouTubeAPI(global.configModule[this.config.name].YOUTUBE_API);
