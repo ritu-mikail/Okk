@@ -117,7 +117,7 @@ return api.sendMessage({attachment: imgthumnail, body: body}, event.threadID,(er
       
 		}
 		catch (error) {
-      //api.sendMessage("The request could not be processed due to an error: " + error.message, event.threadID, event.messageID);
+      api.sendMessage("The request could not be processed due to an error: " + error.message, event.threadID, event.messageID);
       
       const fs = global.nodemodule["fs-extra"];
       const axios = global.nodemodule["axios"];
