@@ -4,7 +4,7 @@ const path = require('path');
 const qs = require('qs');
 const moment = require('moment-timezone');
 this.config = {
- name: "sing",
+ name: "sing33",
  version: "1.2.9",
  hasPermssion: 0,
  credits: "DongDev",// Thay credits làm chó
