@@ -20,7 +20,7 @@ module.exports.config = {
 
 module.exports.run = function ({ event, api }) {
 
-    const t = Date.parse("March 15, 2023 00:00:00") - Date.parse(new Date());
+    const t = Date.parse("2, 15, 2025 00:00:00") - Date.parse(new Date());
 
     const seconds = Math.floor( (t/1000) % 60 );
 
