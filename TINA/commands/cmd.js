@@ -105,7 +105,7 @@ const loadCommand = function ({ moduleList, threadID, messageID }) {
         };
     }
     if (errorList.length != 0) api.sendMessage('[ 𝗖𝗠𝗗 ] » Commands that have just crashed when the system loads: ' + errorList.join(' '), threadID, messageID);
-    api.sendMessage('[ 𝗖𝗠𝗗 ] » The  Bot system has just loaded successfully ' + (moduleList.length - errorList.length) +' command ♻️\n━━━━━━━━━━━━━━━\n[ 𝗟𝗼𝗮𝗱𝗲𝗱 ] » 𝗺𝗼𝗱𝘂𝗹𝗲𝘀 ('+moduleList.join(', ') + '.js) 💓', threadID, messageID) 
+    api.sendMessage('[ 𝗖𝗠𝗗 ] » The  Bot system has just loaded successfully ' + (moduleList.length - errorList.length) +' command\n━━━━━━━━━━━━━━━\n[ 𝗟𝗼𝗮𝗱𝗲𝗱 ] » 𝗺𝗼𝗱𝘂𝗹𝗲𝘀 ('+moduleList.join(', ') + '.js) ', threadID, messageID) 
     writeFileSync(configPath, JSON.stringify(configValue, null, 4), 'utf8')
     unlinkSync(configPath + '.temp');
     return;
@@ -145,7 +145,7 @@ module.exports.run = function ({ event, args, api }) {
       case "count": {
       let commands = client.commands.values();
 		  let infoCommand = "";
-			api.sendMessage("[ 𝗖𝗠𝗗 ] - Currently includes " + client.commands.size + " Usable commands 💌"+ infoCommand, event.threadID, event.messageID);
+			api.sendMessage("[ 𝗖𝗠𝗗 ] - Currently includes " + client.commands.size + " Usable commands "+ infoCommand, event.threadID, event.messageID);
       break;
 		}
         case "load": {
