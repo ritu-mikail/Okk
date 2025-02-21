@@ -2,7 +2,7 @@ module.exports.config = {
   name: "post",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "Bisaya",
+  credits: "nazrul",
   description: "Create a new post in acc bot.",
   commandCategory: "Tiện ích",
   cooldowns: 5,
