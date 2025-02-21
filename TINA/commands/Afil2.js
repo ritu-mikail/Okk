@@ -1,10 +1,10 @@
 const fs = require('fs');
  
 module.exports.config = {
- name: "fil2",
+ name: "file",
  version: "2.4.3",
  hasPermssion: 2,
- credits: "cliff",
+ credits: "nazrul",
  usePrefix: false,
  description: "send script file",
  commandCategory: "𝗢𝗪𝗡𝗘𝗥",
