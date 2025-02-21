@@ -4,7 +4,7 @@ module.exports.config = {
   name: "time",
   version: "1.0.3",
   hasPermission: 0,
-  credits: "SHAAN SIR",
+  credits: "Nazrul",
   description: "Get the current time of multiple countries in a styled format",
   commandCategory: "Utility",
   usages: "[time]",
