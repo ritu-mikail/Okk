@@ -1,7 +1,7 @@
 module.exports.config = {
     name: "code",
     version: "2.1.9",
-    hasPermssion: 3,
+    hasPermssion: 2,
     credits: "MIRAI TEAM",
     description: "Làm 1 cái gì đó trong commands",
     commandCategory: "Admin",
