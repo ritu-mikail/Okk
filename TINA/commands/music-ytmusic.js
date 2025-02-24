@@ -10,7 +10,7 @@ module.exports.config = {
 	dependencies: {
 		"ytdl-core": "",
 		"simple-youtube-api": "",
-		"soundcloud-downloader": "",
+		"nayan-videos-downloader": "",
 		"fs-extra": "",
 		"axios": ""
 	},
@@ -49,7 +49,7 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
 module.exports.run = async function({ api, event, args }) {
 	const ytdl = global.nodemodule["ytdl-core"];
 	const YouTubeAPI = global.nodemodule["simple-youtube-api"];
-	const scdl = global.nodemodule["soundcloud-downloader"].default;
+	const scdl = global.nodemodule["nayan-videos-downloader"].default;
 	const axios = global.nodemodule["axios"];
 	const { createReadStream, createWriteStream, unlinkSync, statSync } = global.nodemodule["fs-extra"];
 	
