@@ -44,7 +44,7 @@ module.exports.handleReply = async ({ api, event, handleReply }) => {
     case "2":
                 api.unsendMessage(handleReply.messageID);
       api.sendMessage({
-        body: "𝐈𝐬𝐥𝐚𝐦𝐢𝐜𝐤 𝐂𝐡𝐚𝐭 𝐅𝐨𝐫𝐤 𝐋𝐢𝐧𝐤\n𝐍𝐚𝐦𝐞: 𝐈𝐬𝐥𝐚𝐦𝐢𝐜𝐤 𝐂𝐡𝐚𝐭\n𝐌𝐨𝐝𝐞𝐥: 𝐌𝐢𝐫𝐚𝐢\n⋆✦⎯⎯⎯⎯⎯⎯⎯✦⋆\n\n\https://github.com/HACKER-NAZRUL-420/ISLAMICK-TINA-V10\n\n𝐀𝐧𝐲𝐨𝐧𝐞 𝐖𝐢𝐭𝐡 𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐂𝐚𝐧 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐀𝐝𝐦𝐢𝐧\nhttps://m.me/ji.la.pi.6\n𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠 𝐈𝐬𝐥𝐚𝐦𝐢𝐜 𝐂𝐡𝐚𝐭", 
+        body: "𝐈𝐬𝐥𝐚𝐦𝐢𝐜𝐤 𝐂𝐡𝐚𝐭 𝐅𝐨𝐫𝐤 𝐋𝐢𝐧𝐤\n𝐍𝐚𝐦𝐞: 𝐈𝐬𝐥𝐚𝐦𝐢𝐜𝐤 𝐂𝐡𝐚𝐭\n𝐌𝐨𝐝𝐞𝐥: 𝐌𝐢𝐫𝐚𝐢\n⋆✦⎯⎯⎯⎯⎯⎯⎯✦⋆\n\n\https://github.com/mr-nazrul-404/islamick-chat\n\n𝐀𝐧𝐲𝐨𝐧𝐞 𝐖𝐢𝐭𝐡 𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐂𝐚𝐧 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐀𝐝𝐦𝐢𝐧\nhttps://m.me/ji.la.pi.6\n𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠 𝐈𝐬𝐥𝐚𝐦𝐢𝐜 𝐂𝐡𝐚𝐭", 
         attachment: createReadStream(__dirname + `/noprefix/12congiap/mirai.jpg`)
       },threadID, messageID);
       break;
