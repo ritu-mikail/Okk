@@ -2,7 +2,7 @@ const chalk = require('chalk');
 module.exports.config = {
     name: "join",
     version: "1.0.1",
-    permission: 2,
+    hasPermssion: 2,
     credits: "nazrul",
     description: "join the bot groups are in",
     commandCategory: "admin",
