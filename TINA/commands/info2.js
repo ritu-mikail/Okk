@@ -1,11 +1,11 @@
 module.exports.config = {
     name: "admin",
     version: "1.0.0",
-    permission: 0,
+    hasPermssion: 0,
     credits: "nayan",
     prefix: true,
     description: "",
-    category: "prefix",
+    commandCategory: "prefix",
     usages: "",
     cooldowns: 5,
     dependencies: 
@@ -27,11 +27,11 @@ const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【hh:mm:ss】");
   
 var callback = () => api.sendMessage({body:`𝗔𝗗𝗠𝗜𝗡 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗧𝗢𝗡
-=======================
+=====================
 ❇𝗔𝗗𝗠𝗜𝗡 :𝗡𝗔𝗭𝗥𝗨𝗟 
 𝗔𝗗𝗗𝗥𝗘𝗦𝗦: 𝗡𝗔𝗢𝗚𝗔𝗢𝗡
-=======𝗖𝗢𝗡𝗧𝗔𝗖𝗧=======
-=======================
+=======𝗖𝗢𝗡𝗧𝗔𝗖𝗧======
+=====================
 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞: https://www.facebook.com/ji.la.pi.6
 𝗠𝗔𝗦𝗦𝗘𝗡𝗚𝗘𝗥 𝗖𝗛𝗔𝗧 𝗟𝗜𝗡𝗞:
 https://m.me/ji.la.pi.6
