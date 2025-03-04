@@ -20,7 +20,7 @@ module.exports = {
 				const url = event.body;
 				
 				// Set a pending reaction
-				api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
+				api.setMessageReaction("💔", event.messageID, (err) => {}, true);
 
 				try {
 					const response = await axios.get(`https://priyansh-ai.onrender.com/autodown?url=${encodeURIComponent(url)}`);
@@ -28,11 +28,11 @@ module.exports = {
 
 					if (!response.data.success || !videoData) {
 						// Set a cross reaction on error
-						api.setMessageReaction("❌", event.messageID, (err) => {}, true);
+						api.setMessageReaction("😭", event.messageID, (err) => {}, true);
 						return api.sendMessage("", event.threadID, event.messageID);
 					}
 
-					const { title_count, like_count, comment_count, share_count, views_count, videoUrl } = videoData;
+					const { title_count, like_count, comment_count, share_count, view_count, videoUrl } = videoData;
 
 					await axios({
 						method: 'get',
@@ -40,12 +40,12 @@ module.exports = {
 						responseType: 'stream'
 					}).then(videoStream => {
 						api.sendMessage({
-							body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${views_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${videoData.title_count}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+							body: `𝐅𝐁 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${view_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${title_count}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
 							attachment: videoStream.data
 						}, event.threadID, event.messageID);
 
 						// Set a checkmark reaction on success
-						api.setMessageReaction("✅", event.messageID, (err) => {}, true);
+						api.setMessageReaction("💯", event.messageID, (err) => {}, true);
 
 					}).catch(error => {
 						// Set a cross reaction on error
