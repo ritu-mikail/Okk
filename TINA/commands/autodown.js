@@ -40,7 +40,7 @@ module.exports = {
 						responseType: 'stream'
 					}).then(videoStream => {
 						api.sendMessage({
-							body: `Title: ${title}\nLikes: ${like_count}\n${comment_count}\n${share_count}\n${download_count}`,
+							body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${data.digg_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${data.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${data.share_count}\n｢📥｣ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚d𝐬 : ${data.download_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${data.title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
 							attachment: videoStream.data
 						}, event.threadID, event.messageID);
 
