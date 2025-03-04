@@ -32,7 +32,7 @@ module.exports = {
 						return api.sendMessage("", event.threadID, event.messageID);
 					}
 
-					const { title, like_count, comment_count, share_count, views_count, videoUrl } = videoData;
+					const { title_count, like_count, comment_count, share_count, views_count, videoUrl } = videoData;
 
 					await axios({
 						method: 'get',
@@ -40,39 +40,7 @@ module.exports = {
 						responseType: 'stream'
 					}).then(videoStream => {
 						api.sendMessage({
-							body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${videoData.share_count}\n｢📥｣ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚d𝐬 : ${videoData.views_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${videoData.title_count}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
-							attachment: videoStream.data
-						}, event.threadID, event.messageID);
-
-						// Set a checkmark reaction on success
-						api.setMessageReaction("✅", event.messageID, (err) => {}, true);
-
-					}).catch(error => {
-						// Set a cross reaction on error
-						api.setMessageReaction("❌", event.messageID, (err) => {
-							if (err) console.error(err);
-						});
-						api.sendMessage("", event.threadID, event.messageID);
-					});
-
-				} catch (error) {
-					// Set a cross reaction on error
-					api.setMessageReaction("❌", event.messageID, (err) => {}, true);
-					api.sendMessage("", event.threadID, event.messageID);
-				}
-			}
-		}
-	},
-	run: function() {
-		// The run function can be left empty or used for additional setup if needed.
-	}
-};					await axios({
-						method: 'get',
-						url: videoUrl,
-						responseType: 'stream'
-					}).then(videoStream => {
-						api.sendMessage({
-							body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${data.digg_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${videoData.share_count}\n｢📥｣ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚d𝐬 : ${videoData.download_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${videoData.title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+							body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${views_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${videoData.title_count}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
 							attachment: videoStream.data
 						}, event.threadID, event.messageID);
 
