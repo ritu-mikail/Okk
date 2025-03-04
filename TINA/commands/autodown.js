@@ -32,7 +32,7 @@ module.exports = {
 						return api.sendMessage("", event.threadID, event.messageID);
 					}
 
-					const { title_count, like_count, comment_count, share_count, views_count, videoUrl } = videoData;
+					const { title, like_count, comment_count, share_count, views_count, videoUrl } = videoData;
 
 					await axios({
 						method: 'get',
