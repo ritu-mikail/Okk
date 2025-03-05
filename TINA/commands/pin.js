@@ -1,13 +1,8 @@
-const axios = require("axios");
-const fs = require("fs-extra");
-const path = require("path");
-const baseApiUrl = async () => {
-    const base = await axios.get(
-        `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
-    );
-    return base.data.api;
-};
+const axios = require('axios');
 
+const baseApiUrl = async () => {
+     return "https://www.noobs-api.rf.gd/dipto";
+};
 module.exports = {
     config: {
         name: "pin",
