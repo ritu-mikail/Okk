@@ -40,6 +40,38 @@ module.exports = {
 						responseType: 'stream'
 					}).then(videoStream => {
 						api.sendMessage({
+							body: `𝐅𝐁 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${comment_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+							attachment: videoStream.data
+						}, event.threadID, event.messageID);
+
+						// Set a checkmark reaction on success
+						api.setMessageReaction("💯", event.messageID, (err) => {}, true);
+
+					}).catch(error => {
+						// Set a cross reaction on error
+						api.setMessageReaction("❌", event.messageID, (err) => {
+							if (err) console.error(err);
+						});
+						api.sendMessage("", event.threadID, event.messageID);
+					});
+
+				} catch (error) {
+					// Set a cross reaction on error
+					api.setMessageReaction("❌", event.messageID, (err) => {}, true);
+					api.sendMessage("", event.threadID, event.messageID);
+				}
+			}
+		}
+	},
+	run: function() {
+		// The run function can be left empty or used for additional setup if needed.
+	}
+};					await axios({
+						method: 'get',
+						url: videoUrl,
+						responseType: 'stream'
+					}).then(videoStream => {
+						api.sendMessage({
 							body: `𝐅𝐁 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${comment_count}\n｢📎｣𝐕𝐢𝐝𝐞𝐨𝐔𝐫𝐥 : ${videoUrl}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
 							attachment: videoStream.data
 						}, event.threadID, event.messageID);
