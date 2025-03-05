@@ -7,8 +7,8 @@ module.exports = {
   config: {
   name: "bing2",
   version: "1.0",
-  credits: "Khan Rahul RK",
-  hasPermssion: 2,
+  credits: "dipto",
+  hasPermssion: 0,
   usePrefix: true,
   prefix: true,
   description: "Generate images by Dalle-3 AI",
