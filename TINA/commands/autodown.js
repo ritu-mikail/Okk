@@ -32,7 +32,7 @@ module.exports = {
 						return api.sendMessage("", event.threadID, event.messageID);
 					}
 
-					const { title_count, like_count, comment_count, share_count, view_count, videoUrl } = videoData;
+					const { title, like_count, comment_count, share_count, videoUrl } = videoData;
 
 					await axios({
 						method: 'get',
@@ -40,7 +40,7 @@ module.exports = {
 						responseType: 'stream'
 					}).then(videoStream => {
 						api.sendMessage({
-							body: `𝐅𝐁 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${view_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${title_count}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+							body: `𝐅𝐁 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${videoData.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${view_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
 							attachment: videoStream.data
 						}, event.threadID, event.messageID);
 
