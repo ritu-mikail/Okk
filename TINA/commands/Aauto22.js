@@ -29,10 +29,10 @@ const data = await alldown(content);
     fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
         return api.sendMessage({
-            body: `𝐓𝐈𝐊 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${data.digg_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${data.comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${data.share_count}\n｢📥｣ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚d𝐬 : ${data.download_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${data.title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+            body: `𝐓𝐈𝐊 𝐕𝐈𝐃𝐄𝐎 𝐃𝐀𝐖𝐍𝐋𝐎𝐀𝐃\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢👍｣ 𝐋𝐢𝐤𝐞𝐬 : ${like_count}\n｢💬｣ 𝐜𝐨𝐦𝐦𝐞𝐧𝐭𝐬 : ${comment_count}\n｢📎｣𝐒𝐡𝐚𝐫𝐞 : ${share_count}\n｢📥｣ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚d𝐬 : ${download_count}\n｢📝｣ 𝐓𝐢𝐭𝐥𝐞: ${title}\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
             attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
 
         }, event.threadID, event.messageID);
     }
 }
-}
+  }
