@@ -4,7 +4,7 @@ const path = require('path');
 const https = require('https');
 
 module.exports.config = {
-    name: "scs",
+    name: "ss2",
     version: "1.0.0",
     hasPermission: 0,
     description: "Takes a screenshot of the provided URL, provides status code, and checks SSL certificate validity.",
