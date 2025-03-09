@@ -88,7 +88,7 @@ function checkPrayerTimes(api) {
 }
 
 
-module.exports.onLoad = ({ api }) => {
+module.exports.run = ({ api }) => {
   fetchAndSavePrayerTimes(); 
   scheduleDailyFetch();
   checkPrayerTimes(api);
