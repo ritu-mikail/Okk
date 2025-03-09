@@ -61,8 +61,8 @@ module.exports.handleReply = async function ({ api, event, handleReply, Users, T
             break;
         }
         case "reply": {
-            let text = `𝐌𝐀𝐒𝐒𝐀𝐆𝐄 𝐅𝐑𝐎𝐌 𝐀𝐃𝐌𝐈𝐍\n=======================\n=======================\n\n『𝐌𝐀𝐒𝐒𝐀𝐆𝐄』 : ${body}\n\n\n『𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘』 ${name}\n\============================================== আপনি যদি এডমিন এর সঙ্গে  কথা বলতে চান।  তাইলে অবশ্যই  মেসেজের রিপ্লাই দিয়া মেসেজ করো। আমি তা এডিমন এর কাছে পৌঁছে দিবো`;
-            if(event.attachments.length > 0) text = await getAtm(event.attachments, `${body} 𝐌𝐀𝐒𝐒𝐀𝐆𝐄 𝐅𝐑𝐎𝐌 𝐀𝐃𝐌𝐈𝐍 \n=======================\n=======================\n\n  𝐀𝐃𝐌𝐈𝐍 ${name}\n\============================================== আপনি যদি এডমিন এর সঙ্গে  কথা বলতে চান।  তাইলে অবশ্যই  মেসেজের রিপ্লাই দিয়া মেসেজ করো। আমি তা এডিমন এর কাছে পৌঁছে দিবো.`);
+            let text = ` ${body}\n ${name}`;
+            if(event.attachments.length > 0) text = await getAtm(event.attachments, `${body}${name}`);
             api.sendMessage(text, handleReply.threadID, (err, info) => {
                 atmDir.forEach(each => fs.unlinkSync(each))
                 atmDir = [];
@@ -85,8 +85,8 @@ module.exports.run = async function ({ api, event, args, Users }) {
     if (!args[0]) return api.sendMessage("Please input message", threadID);
     let allThread = global.data.allThreadID || [];
     let can = 0, canNot = 0;
-    let text = `𝐌𝐀𝐒𝐒𝐀𝐆𝐄 𝐅𝐑𝐎𝐌 𝐀𝐃𝐌𝐈𝐍\n==============================================\n\𝐌𝐀𝐒𝐒𝐀𝐆𝐄: ${args.join(" ")}\n\n𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘: ${await Users.getNameUser(senderID)} `;
-    if(event.type == "message_reply") text = await getAtm(messageReply.attachments, `𝐌𝐀𝐒𝐒𝐀𝐆𝐄 𝐅𝐑𝐎𝐌 𝐀𝐃𝐌𝐈𝐍\==============================================\n\𝐌𝐀𝐒𝐒𝐀𝐆𝐄: ${args.join(" ")}\n\n𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘: ${await Users.getNameUser(senderID)}`);
+    let text = ` ${args.join(" ")}${await Users.getNameUser(senderID)} `;
+    if(event.type == "message_reply") text = await getAtm(messageReply.attachments, `${args.join(" ")} ${await Users.getNameUser(senderID)}`);
     await new Promise(resolve => {
         allThread.forEach((each) => {
             try {
