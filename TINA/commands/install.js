@@ -62,7 +62,7 @@ module.exports.run = async ({ message, args, api, event }) => {
     }
 
     fs.writeFileSync(filePath, code, 'utf-8');
-    api.sendMessage(`✅ সফলভাবে ফাইল তৈরি হয়েছে: ${filePath}`, event.threadID, event.messageID);
+    api.sendMessage(`✅ সফলভাবে ফাইল তৈরি হয়েছে:\nTINA/commands/${fileName}`, event.threadID, event.messageID);
   } catch (error) {
     console.error("Error:", error);
     api.sendMessage("❌ ফাইল তৈরি করতে একটি সমস্যা হয়েছে!", event.threadID, event.messageID);
