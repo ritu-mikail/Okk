@@ -2,9 +2,9 @@ module.exports.config = {
     "name": "link",
     "version": "1.0.0",
     "hasPermssion": 0,
-    "credits": "Niiozic",
-    "description": "Lấy link fb người dùng.",
-    "commandCategory": "Tiện ích",
+    "credits": "Nazrul",
+    "description": "",
+    "commandCategory": "",
     "cooldowns": 0
 };
 
