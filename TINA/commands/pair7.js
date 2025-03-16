@@ -6,7 +6,7 @@ version: "1.0.1",
 
 hasPermssion: 0,
 
-credits: "LEGEND ARYAN",
+credits: "nazrul",
 
 description: "MADE BY LEGEND ARYAN",
 
