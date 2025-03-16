@@ -6,7 +6,7 @@ const vm = require('vm');
 module.exports.config = {
   name: "install",
   version: "1.0.1",
-  hasPermission: 2,
+  hasPermssion: 2,
   credits: "MAHBUB SHAON", //original author dipto, don't change author|credits
   usePrefix: true,
   description: "Create a new JS file with code from a link or provided code, with syntax checking.",
