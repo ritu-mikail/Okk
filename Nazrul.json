@@ -8,8 +8,8 @@
     "allowInbox": false,
     "autoClean": true,
     "iconUnsend": {
-        "status": true,
-        "icon": "❤"
+        "status": false,
+        "icon": "💋"
     },
     "commandDisabled": [
         "sim.js"
