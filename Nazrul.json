@@ -9,7 +9,8 @@
     "autoClean": true,
     "iconUnsend": {
         "status": true,
-        "icon": "🥰",
+        "icon": "❤"
+    },
     "commandDisabled": [
         "sim.js"
     ],
