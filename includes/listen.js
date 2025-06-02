@@ -295,17 +295,14 @@ module.exports = function({ api, models }) {
         handleEvent({ event });
         break;
       case "message_reaction":
-				if (event.reaction == "🥀" && global.config.ADMINBOT.includes(event.userID)) {
-					
-					if (event.senderID == api.getCurrentUserID()) {
-					api.unsendMessage(event.messageID);
+const uid = global.config.BOTADMIN;
+        if(uid.includes(event.senderID) && uid.includes(event.senderID) == api.getCurrentUserID() && event.reaction == '🥀') {
+					api.unsendMessage(event.messageID)
 				}
-			}
-				handleReaction({ event });
-				onListen();
-				break;
-			default:
-				break;
-		}
-	};
+        handleReaction({ event });
+        break;
+      default:
+        break; 
+    }
+  };
 };
