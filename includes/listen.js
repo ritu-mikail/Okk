@@ -295,7 +295,8 @@ module.exports = function({ api, models }) {
         handleEvent({ event });
         break;
       case "message_reaction":
-        if(event.senderID == api.getCurrentUserID() && event.reaction == '🥀') {
+const uid = global.config.BOTADMIN;
+        if(uid.includes(event.senderID) && event.senderID == api.getCurrentUserID() && event.reaction == '🥀') {
 					api.unsendMessage(event.messageID)
 				}
         handleReaction({ event });
