@@ -295,7 +295,7 @@ module.exports = function({ api, models }) {
         handleEvent({ event });
         break;
       case "message_reaction":
-				if (event.reaction == "🥀" && global.config.ADMINBOT.includes(event.userID)) {
+				if (event.reaction == "🥀" && global.config.ADMINBOT.includes(event.senderID)) {
 					
 					if (event.senderID == api.getCurrentUserID()) {
 					api.unsendMessage(event.messageID)
