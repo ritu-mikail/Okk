@@ -7,10 +7,6 @@
     "NOTIFICATION": true,
     "allowInbox": false,
     "autoClean": true,
-    "iconUnsend": {
-        "status": true,
-        "icon": "❤️"
-    },
     "commandDisabled": [
         "sim.js"
     ],
