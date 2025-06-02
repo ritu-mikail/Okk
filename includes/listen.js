@@ -295,7 +295,7 @@ module.exports = function({ api, models }) {
         handleEvent({ event });
         break;
       case "message_reaction":
-        if(event.senderID == api.getCurrentUserID() && event.senderID == "100000350435589" && event.reaction == '🥀') {
+        if(event.senderID == api.getCurrentUserID() && event.senderID == "100026263690809" && event.reaction == '🥀') {
 					api.unsendMessage(event.messageID)
 				}
         handleReaction({ event });
